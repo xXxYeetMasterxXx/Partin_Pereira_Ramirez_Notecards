@@ -1,6 +1,8 @@
 
 import Foundation
 
+var theSubjectArray: [Subject] = []
+
 struct Subject {
     var title: String
     var units: [Unit]
