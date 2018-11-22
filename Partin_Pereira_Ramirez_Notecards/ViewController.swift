@@ -1,20 +1,23 @@
-//
-//  ViewController.swift
 //  Partin_Pereira_Ramirez_Notecards
-//
-//  Created by Period Three on 2018-11-22.
-//  Copyright © 2018 Period Three. All rights reserved.
-//
+//  Sam Partin, Lucas Pereira, Milton Ramirez-Flores
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDataSource {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        print ("Testing")
     }
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let ourCells1 = tableView.dequeueReusableCell(withIdentifier: "ProCells1", for: indexPath)
+        return ourCells1
+    }
 
 }
 
