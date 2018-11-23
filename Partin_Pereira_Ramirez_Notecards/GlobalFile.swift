@@ -18,6 +18,9 @@ struct Flashcard: SetNoteType {
     var text1: String
     var text2: String
     var type: NoteType
+    func beAType() {
+        <#code#>
+    }
 }
 
 enum NoteType {
@@ -28,5 +31,5 @@ enum NoteType {
 
 protocol SetNoteType {
     var type: NoteType {get set}
-    func beAType (String)
+    func beAType (note: String)
 }
