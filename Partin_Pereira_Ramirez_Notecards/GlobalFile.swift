@@ -25,3 +25,8 @@ struct Flashcard {
         case note
     }
 }
+
+
+protocol SetNoteType {
+    var type: NoteType {get set}
+}
