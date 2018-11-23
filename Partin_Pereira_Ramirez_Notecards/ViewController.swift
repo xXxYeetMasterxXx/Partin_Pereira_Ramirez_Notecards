@@ -11,11 +11,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return theSubjectArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCells1 = tableView.dequeueReusableCell(withIdentifier: "ProCells1", for: indexPath)
+        ourCells1.textLabel?.text = theSubjectArray[indexPath.row].title
         return ourCells1
     }
 
