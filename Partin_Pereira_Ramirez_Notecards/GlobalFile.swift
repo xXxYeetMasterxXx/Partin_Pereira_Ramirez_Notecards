@@ -4,7 +4,6 @@ import Foundation
 var theSubjectArray: [Subject] = []
 var number: Int = 0
 
-
 struct Subject {
     var title: String
     var units: [Unit]
