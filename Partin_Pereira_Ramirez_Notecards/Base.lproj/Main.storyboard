@@ -121,26 +121,20 @@
             </objects>
             <point key="canvasLocation" x="1863.7681159420292" y="132.88043478260872"/>
         </scene>
-        <!--View Controller-->
+        <!--Make New Subject View Controller-->
         <scene sceneID="dt1-Z7-LVu">
             <objects>
-                <viewController id="uVG-Us-UJT" sceneMemberID="viewController">
+                <viewController id="uVG-Us-UJT" customClass="MakeNewSubjectViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xYe-HE-rel">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WS4-EE-lQo">
-                                <rect key="frame" x="20" y="244" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XVD-mr-KUu"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gO-TY-EMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4241" y="-747"/>
+            <point key="canvasLocation" x="1071" y="852"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yzr-C1-jYb">
