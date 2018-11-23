@@ -5,6 +5,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var subjectTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("Testing")
@@ -25,5 +27,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         number = indexPath.row
     }
 
+    @IBAction func unwind(_ sender: UIStoryboardSegue) {
+        subjectTableView.reloadData()
+    }
 
 }

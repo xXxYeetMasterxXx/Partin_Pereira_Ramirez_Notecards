@@ -60,6 +60,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Subjects" id="kN4-U4-8oR"/>
+                    <connections>
+                        <outlet property="subjectTableView" destination="m5d-hg-WIi" id="Dkj-YP-tg5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,6 +114,7 @@
                     <navigationItem key="navigationItem" title="Units" id="OKM-eK-qYH"/>
                     <connections>
                         <outlet property="unitItem" destination="OKM-eK-qYH" id="nvo-Hu-Ilc"/>
+                        <outlet property="unitTableView" destination="sgL-Yp-wlv" id="E5M-t5-jPT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9t-wU-8oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
