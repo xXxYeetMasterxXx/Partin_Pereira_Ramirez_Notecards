@@ -3,6 +3,7 @@ import Foundation
 
 var theSubjectArray: [Subject] = []
 var number: Int = 0
+var number2: Int = 0
 
 struct Subject {
     var title: String
