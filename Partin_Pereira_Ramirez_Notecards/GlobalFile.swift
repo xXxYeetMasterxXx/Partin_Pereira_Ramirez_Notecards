@@ -28,4 +28,7 @@ enum NoteType {
 
 protocol SetNoteType {
     var type: NoteType {get set}
+
+
+
 }
