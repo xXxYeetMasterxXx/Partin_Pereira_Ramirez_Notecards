@@ -7,9 +7,9 @@ class UnitViewController: UIViewController, UITableViewDataSource {
         return theSubjectArray[number].units.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+    //func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+   // }
     
 
    
