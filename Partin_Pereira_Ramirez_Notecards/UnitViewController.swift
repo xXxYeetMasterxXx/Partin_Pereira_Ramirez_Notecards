@@ -13,18 +13,6 @@ class UnitViewController: UIViewController, UITableViewDataSource {
         return ourCells2
     }
     
-
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
