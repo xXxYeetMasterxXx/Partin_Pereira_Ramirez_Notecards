@@ -4,6 +4,7 @@ import UIKit
 
 class UnitViewController: UIViewController, UITableViewDataSource {
     
+    
     @IBOutlet weak var unitItem: UINavigationItem!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -17,6 +18,7 @@ class UnitViewController: UIViewController, UITableViewDataSource {
     }
     
     override func viewDidLoad() {
+        print("Pee")
         super.viewDidLoad()
     }
     
