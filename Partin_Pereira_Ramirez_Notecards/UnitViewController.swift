@@ -3,6 +3,9 @@
 import UIKit
 
 class UnitViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet weak var unitItem: UINavigationItem!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return theSubjectArray[number].units.count
     }
@@ -15,6 +18,10 @@ class UnitViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        unitItem.title = theSubjectArray[number].title
     }
 
 }

@@ -68,7 +68,7 @@
         <!--Units-->
         <scene sceneID="Qso-ys-aVw">
             <objects>
-                <viewController id="Bmz-z2-oKf" sceneMemberID="viewController">
+                <viewController id="Bmz-z2-oKf" customClass="UnitViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XYa-4C-Dy4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,6 +109,9 @@
                         <viewLayoutGuide key="safeArea" id="fLB-sG-T0i"/>
                     </view>
                     <navigationItem key="navigationItem" title="Units" id="OKM-eK-qYH"/>
+                    <connections>
+                        <outlet property="unitItem" destination="OKM-eK-qYH" id="nvo-Hu-Ilc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9t-wU-8oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
