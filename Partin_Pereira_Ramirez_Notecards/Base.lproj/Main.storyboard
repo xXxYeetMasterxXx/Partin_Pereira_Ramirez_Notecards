@@ -45,9 +45,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Bmz-z2-oKf" kind="show" identifier="moveToUnit" id="AE2-vo-8PI"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -59,11 +56,32 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Subjects" id="kN4-U4-8oR"/>
+                    <navigationItem key="navigationItem" title="Subjects" id="kN4-U4-8oR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8hL-Ef-k4v">
+                            <connections>
+                                <segue destination="LSK-zK-2Op" kind="show" id="MeT-m7-boT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071.0144927536232" y="132.06521739130434"/>
+        </scene>
+        <!--Make New Subject View Controller-->
+        <scene sceneID="Oq5-7m-Fuf">
+            <objects>
+                <viewController id="LSK-zK-2Op" customClass="MakeNewSubjectViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3AI-mg-Mwe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tf7-po-ZZb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEz-6S-3Jg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="133"/>
         </scene>
         <!--Units-->
         <scene sceneID="Qso-ys-aVw">
@@ -115,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9t-wU-8oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863.7681159420292" y="132.88043478260872"/>
+            <point key="canvasLocation" x="2604" y="133"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dt1-Z7-LVu">
