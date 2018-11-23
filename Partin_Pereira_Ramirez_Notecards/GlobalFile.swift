@@ -28,7 +28,5 @@ enum NoteType {
 
 protocol SetNoteType {
     var type: NoteType {get set}
-
-
-
+    func beAType (String)
 }
