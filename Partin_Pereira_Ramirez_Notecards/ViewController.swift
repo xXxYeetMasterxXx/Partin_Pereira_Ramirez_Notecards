@@ -15,9 +15,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ourCells1 = tableView.dequeueReusableCell(withIdentifier: "ProCells1", for: indexPath)
-        ourCells1.textLabel?.text = theSubjectArray[indexPath.row].title
-        return ourCells1
+        let ourCells = tableView.dequeueReusableCell(withIdentifier: "SubjectCell", for: indexPath)
+        ourCells.textLabel?.text = theSubjectArray[indexPath.row].title
+        return ourCells
     }
 
 }
