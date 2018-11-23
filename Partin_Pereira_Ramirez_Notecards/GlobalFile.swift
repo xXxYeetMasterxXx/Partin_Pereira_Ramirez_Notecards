@@ -13,19 +13,18 @@ struct Unit {
     var flashcard: [Flashcard]
 }
 
-struct Flashcard {
+struct Flashcard: SetNoteType {
     var title: String
     var text1: String
     var text2: String
     var type: NoteType
-    
-    enum NoteType {
-        case definiton
-        case question
-        case note
-    }
 }
 
+enum NoteType {
+    case definiton
+    case question
+    case note
+}
 
 protocol SetNoteType {
     var type: NoteType {get set}
