@@ -31,7 +31,6 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let sender2 = sender.source as? MakeNewUnitViewController {
             theSubjectArray[number].units.append(sender2.unitMade)
         }
-        unitTableView.reloadData()
     }
 
     override func viewDidLoad() {
@@ -40,6 +39,7 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewWillAppear(_ animated: Bool) {
         unitItem.title = theSubjectArray[number].title
+        unitTableView.reloadData()
     }
     
 }
