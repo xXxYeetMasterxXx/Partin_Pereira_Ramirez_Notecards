@@ -18,6 +18,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCells = tableView.dequeueReusableCell(withIdentifier: "SubjectCell", for: indexPath)
+        if theSubjectArray[indexPath.row].title == "" {
+            theSubjectArray[indexPath.row].title = "Subject \(indexPath.row + 1)"
+        }
         ourCells.textLabel?.text = theSubjectArray[indexPath.row].title
         ourCells.detailTextLabel?.text = "\(theSubjectArray[indexPath.row].units.count) units"
         return ourCells
