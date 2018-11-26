@@ -15,6 +15,7 @@
 		546D7E2521A71B4200C617AC /* Partin_Pereira_Ramirez_NotecardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546D7E2421A71B4200C617AC /* Partin_Pereira_Ramirez_NotecardsTests.swift */; };
 		546D7E3021A71B4200C617AC /* Partin_Pereira_Ramirez_NotecardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546D7E2F21A71B4200C617AC /* Partin_Pereira_Ramirez_NotecardsUITests.swift */; };
 		546D7E3E21A7248D00C617AC /* GlobalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546D7E3D21A7248D00C617AC /* GlobalFile.swift */; };
+		549680EA21AC61AF0054D827 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549680E921AC61AF0054D827 /* SettingsViewController.swift */; };
 		54E253D621AC5DE8000BBE1B /* MakeNewUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E253D521AC5DE8000BBE1B /* MakeNewUnitViewController.swift */; };
 		54F04C8B21A873550033A3A0 /* UnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F04C8A21A873550033A3A0 /* UnitViewController.swift */; };
 		54F04C8F21A87B450033A3A0 /* MakeNewSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F04C8E21A87B450033A3A0 /* MakeNewSubjectViewController.swift */; };
@@ -52,6 +53,7 @@
 		546D7E2F21A71B4200C617AC /* Partin_Pereira_Ramirez_NotecardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partin_Pereira_Ramirez_NotecardsUITests.swift; sourceTree = "<group>"; };
 		546D7E3121A71B4200C617AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		546D7E3D21A7248D00C617AC /* GlobalFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFile.swift; sourceTree = "<group>"; };
+		549680E921AC61AF0054D827 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 		54E253D521AC5DE8000BBE1B /* MakeNewUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNewUnitViewController.swift; sourceTree = "<group>"; };
 		54F04C8A21A873550033A3A0 /* UnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitViewController.swift; sourceTree = "<group>"; };
 		54F04C8E21A87B450033A3A0 /* MakeNewSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNewSubjectViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				54F04C8A21A873550033A3A0 /* UnitViewController.swift */,
 				54F04C8E21A87B450033A3A0 /* MakeNewSubjectViewController.swift */,
 				54E253D521AC5DE8000BBE1B /* MakeNewUnitViewController.swift */,
+				549680E921AC61AF0054D827 /* SettingsViewController.swift */,
 				546D7E1321A71B4200C617AC /* Main.storyboard */,
 				546D7E1621A71B4200C617AC /* Assets.xcassets */,
 				546D7E1821A71B4200C617AC /* LaunchScreen.storyboard */,
@@ -270,6 +273,7 @@
 			files = (
 				546D7E1221A71B4200C617AC /* ViewController.swift in Sources */,
 				546D7E3E21A7248D00C617AC /* GlobalFile.swift in Sources */,
+				549680EA21AC61AF0054D827 /* SettingsViewController.swift in Sources */,
 				54F04C8B21A873550033A3A0 /* UnitViewController.swift in Sources */,
 				54E253D621AC5DE8000BBE1B /* MakeNewUnitViewController.swift in Sources */,
 				54F04C8F21A87B450033A3A0 /* MakeNewSubjectViewController.swift in Sources */,

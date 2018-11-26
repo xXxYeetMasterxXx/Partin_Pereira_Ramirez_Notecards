@@ -12,7 +12,7 @@
         <!--Settings-->
         <scene sceneID="V7S-XC-kit">
             <objects>
-                <viewController id="4W2-mh-J8j" sceneMemberID="viewController">
+                <viewController id="4W2-mh-J8j" customClass="SettingsViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LPh-M0-3Fw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
