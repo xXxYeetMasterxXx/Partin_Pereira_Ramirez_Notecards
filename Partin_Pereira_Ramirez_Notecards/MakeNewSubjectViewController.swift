@@ -16,4 +16,11 @@ class MakeNewSubjectViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let safeSubject = subjectLabel.text {
+            madeSubject.title = safeSubject
+            theSubjectArray.append(madeSubject)
+            print("thisWorks")
+        }
+    }
 }
