@@ -22,7 +22,7 @@ class UnitViewController: UIViewController, UITableViewDataSource {
     }
 
     @IBAction func unwind2(_ sender: UIStoryboardSegue ) {
-        if let sender2 = sender.source as? MakeNewSubjectViewController {
+        if let sender2 = sender.source as? MakeNewUnitViewController {
             theSubjectArray[number].units.append(sender2.unitMade)
         }
     }
