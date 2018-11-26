@@ -13,6 +13,9 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCells2 = tableView.dequeueReusableCell(withIdentifier: "UnitCell", for: indexPath)
+        if theSubjectArray[number].units[indexPath.row].title == "" {
+            theSubjectArray[number].units[indexPath.row].title = "Unit \(indexPath.row + 1)"
+        }
         ourCells2.textLabel?.text = theSubjectArray[number].units[indexPath.row].title
         ourCells2.detailTextLabel?.text = "\(theSubjectArray[number].units[indexPath.row].flashcards.count) flashcards"
         return ourCells2
@@ -31,7 +34,6 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let sender2 = sender.source as? MakeNewUnitViewController {
             theSubjectArray[number].units.append(sender2.unitMade)
         }
-        unitTableView.reloadData()
     }
 
     override func viewDidLoad() {
@@ -40,6 +42,7 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewWillAppear(_ animated: Bool) {
         unitItem.title = theSubjectArray[number].title
+        unitTableView.reloadData()
     }
     
 }
