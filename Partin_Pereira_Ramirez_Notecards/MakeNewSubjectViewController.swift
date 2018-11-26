@@ -8,9 +8,6 @@ class MakeNewSubjectViewController: UIViewController {
     
     var madeSubject = Subject(title: "Subject", units: [])
     
-    
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let safeSubject = subjectLabel.text {
             madeSubject.title = safeSubject
