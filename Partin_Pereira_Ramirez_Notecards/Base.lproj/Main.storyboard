@@ -233,7 +233,7 @@
                     <navigationItem key="navigationItem" title="Add Unit" id="S0a-t2-bTb">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="DCT-0P-zQe">
                             <connections>
-                                <segue destination="0Ct-X3-Ybp" kind="unwind" unwindAction="unwind2WithUnwindSegue:" id="EVG-7T-TmS"/>
+                                <segue destination="0Ct-X3-Ybp" kind="unwind" unwindAction="unwind2:" id="bBt-Dl-Gzk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
