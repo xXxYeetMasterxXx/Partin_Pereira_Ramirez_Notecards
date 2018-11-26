@@ -2,7 +2,7 @@
 
 import UIKit
 
-class UnitViewController: UIViewController, UITableViewDataSource {
+class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var unitTableView: UITableView!
     @IBOutlet weak var unitItem: UINavigationItem!
@@ -13,6 +13,8 @@ class UnitViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCells2 = tableView.dequeueReusableCell(withIdentifier: "UnitCell", for: indexPath)
+        ourCells2.textLabel?.text = theSubjectArray[number].units[indexPath.row].title
+        ourCells2.detailTextLabel?.text = "\(theSubjectArray[number].units[indexPath.row].flashcards.count) flashcards"
         return ourCells2
     }
     
@@ -21,10 +23,15 @@ class UnitViewController: UIViewController, UITableViewDataSource {
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        number2 = indexPath.row
+    }
+    
     @IBAction func unwind2(_ sender: UIStoryboardSegue) {
         if let sender2 = sender.source as? MakeNewUnitViewController {
             theSubjectArray[number].units.append(sender2.unitMade)
         }
+        unitTableView.reloadData()
     }
 
     override func viewDidLoad() {

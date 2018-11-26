@@ -12,7 +12,7 @@ struct Subject {
 
 struct Unit {
     var title: String
-    var flashcard: [Flashcard]
+    var flashcards: [Flashcard]
 }
 
 struct Flashcard: SetNoteType {
