@@ -237,6 +237,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="unitLabel" destination="yCf-TK-1gI" id="6yP-g5-mwA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFq-q0-P3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0Ct-X3-Ybp" userLabel="Exit" sceneMemberID="exit"/>
