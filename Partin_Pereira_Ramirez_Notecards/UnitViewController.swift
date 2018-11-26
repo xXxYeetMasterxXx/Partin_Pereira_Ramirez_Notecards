@@ -21,7 +21,10 @@ class UnitViewController: UIViewController, UITableViewDataSource {
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
 
-    @IBAction func unwind2(unwindSegue: UIStoryboardSegue ) {
+    @IBAction func unwind2(_ sender: UIStoryboardSegue ) {
+        if let sender2 = sender.source as? MakeNewSubjectViewController {
+            theSubjectArray[number].units.append(sender2.unitMade)
+        }
     }
 
     override func viewDidLoad() {
