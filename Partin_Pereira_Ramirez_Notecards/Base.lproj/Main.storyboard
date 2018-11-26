@@ -138,6 +138,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="TOl-uP-cjH" kind="show" id="58U-Te-QEt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -189,6 +192,29 @@
                 <exit id="SLP-LI-LeP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1069.5652173913045" y="903.26086956521749"/>
+        </scene>
+        <!--Add Unit-->
+        <scene sceneID="qfM-KX-zE4">
+            <objects>
+                <viewController id="TOl-uP-cjH" customClass="MakeNewUnitViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gSj-wg-oJp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="61J-zm-1ie"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Unit" id="S0a-t2-bTb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="DCT-0P-zQe">
+                            <connections>
+                                <segue destination="0Ct-X3-Ybp" kind="unwind" unwindAction="unwindToUnitWithUnwindSegue:" id="Ikm-o2-SZr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFq-q0-P3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0Ct-X3-Ybp" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1864" y="903"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yzr-C1-jYb">
