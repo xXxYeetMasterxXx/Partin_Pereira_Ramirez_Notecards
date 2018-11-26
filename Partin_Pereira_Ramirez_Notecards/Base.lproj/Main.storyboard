@@ -138,6 +138,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gKD-BT-Wfl" kind="show" id="jsL-Ru-4pj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

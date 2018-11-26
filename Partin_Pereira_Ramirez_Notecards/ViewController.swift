@@ -36,6 +36,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } /*else if let sender = sender.source as? SettingsViewController {
             
         }*/
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         subjectTableView.reloadData()
     }
 
