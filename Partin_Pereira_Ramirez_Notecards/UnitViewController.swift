@@ -26,6 +26,7 @@ class UnitViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
