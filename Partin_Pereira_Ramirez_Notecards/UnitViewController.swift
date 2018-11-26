@@ -24,5 +24,9 @@ class UnitViewController: UIViewController, UITableViewDataSource {
         
         return ourCells2
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        theSubjectArray.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
 
 }
