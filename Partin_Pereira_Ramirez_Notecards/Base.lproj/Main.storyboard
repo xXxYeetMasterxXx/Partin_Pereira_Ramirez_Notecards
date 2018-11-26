@@ -9,6 +9,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="V7S-XC-kit">
+            <objects>
+                <viewController id="4W2-mh-J8j" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LPh-M0-3Fw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BrL-0A-dkm"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="Miq-Q0-lz1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="bLz-Ul-gfi">
+                            <connections>
+                                <segue destination="xro-Mr-BqM" kind="unwind" unwindAction="unwind:" id="wA6-9q-WIQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNk-SO-s4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xro-Mr-BqM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="-615"/>
+        </scene>
         <!--Subjects-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -60,6 +83,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Subjects" id="kN4-U4-8oR">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="TTp-L4-Swc">
+                            <connections>
+                                <segue destination="4W2-mh-J8j" kind="show" id="TGI-dJ-sbM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jgr-yS-vAJ">
                             <connections>
                                 <segue destination="uVG-Us-UJT" kind="show" id="VBc-NQ-L9H"/>
