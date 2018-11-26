@@ -127,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="1863.7681159420292" y="132.88043478260872"/>
         </scene>
-        <!--Make New Subject View Controller-->
+        <!--Add Subject-->
         <scene sceneID="dt1-Z7-LVu">
             <objects>
                 <viewController id="uVG-Us-UJT" customClass="MakeNewSubjectViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Say The N WORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5C-91-sr4">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Subject Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5C-91-sr4">
                                 <rect key="frame" x="20" y="162" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -146,11 +146,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XVD-mr-KUu"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Subject" id="hP9-vl-Zir">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="gAU-3y-3kN">
+                            <connections>
+                                <segue destination="SLP-LI-LeP" kind="unwind" unwindAction="unwind:" id="Cdd-80-ZQp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="subjectLabel" destination="K5C-91-sr4" id="eBJ-IM-LrQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gO-TY-EMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SLP-LI-LeP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1069.5652173913045" y="903.26086956521749"/>
         </scene>
