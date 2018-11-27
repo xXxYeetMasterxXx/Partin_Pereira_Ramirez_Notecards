@@ -196,6 +196,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="unitItem" destination="OKM-eK-qYH" id="nvo-Hu-Ilc"/>
+                        <outlet property="unitTableView" destination="sgL-Yp-wlv" id="IlI-ms-Sak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9t-wU-8oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,6 +353,13 @@
                                     <action selector="colourButtonPressed:" destination="h2u-Ci-jCP" eventType="touchUpInside" id="9V7-GW-9ra"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Flashcard Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QTg-X8-nLD">
+                                <rect key="frame" x="20" y="101" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="89E-kc-GND"/>
@@ -359,6 +367,7 @@
                     <navigationItem key="navigationItem" title="Add Flashcard" id="VIa-kA-qYY"/>
                     <connections>
                         <outlet property="colourButton" destination="c2u-T1-opl" id="Nyc-kc-dKB"/>
+                        <outlet property="titleTextField" destination="QTg-X8-nLD" id="oRm-vy-g1u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMc-iT-0fp" userLabel="First Responder" sceneMemberID="firstResponder"/>
