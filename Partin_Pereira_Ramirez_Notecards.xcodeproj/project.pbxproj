@@ -109,13 +109,13 @@
 		546D7E0E21A71B4200C617AC /* Partin_Pereira_Ramirez_Notecards */ = {
 			isa = PBXGroup;
 			children = (
-				54BDBA2421AC723C004C2A0F /* FlashcardViewController.swift */,
 				546D7E0F21A71B4200C617AC /* AppDelegate.swift */,
 				546D7E3D21A7248D00C617AC /* GlobalFile.swift */,
 				546D7E1121A71B4200C617AC /* ViewController.swift */,
 				54F04C8E21A87B450033A3A0 /* MakeNewSubjectViewController.swift */,
 				54F04C8A21A873550033A3A0 /* UnitViewController.swift */,
 				54E253D521AC5DE8000BBE1B /* MakeNewUnitViewController.swift */,
+				54BDBA2421AC723C004C2A0F /* FlashcardViewController.swift */,
 				549680E921AC61AF0054D827 /* SettingsViewController.swift */,
 				546D7E1321A71B4200C617AC /* Main.storyboard */,
 				546D7E1621A71B4200C617AC /* Assets.xcassets */,
