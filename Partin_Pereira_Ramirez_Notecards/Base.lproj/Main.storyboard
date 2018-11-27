@@ -203,7 +203,7 @@
             </objects>
             <point key="canvasLocation" x="1864" y="133"/>
         </scene>
-        <!--Flashcard-->
+        <!--Flashcards-->
         <scene sceneID="Dk9-Ya-cjo">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="gKD-BT-Wfl" customClass="FlashcardViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
@@ -251,7 +251,7 @@
                         <viewLayoutGuide key="safeArea" id="OlR-ng-ktG"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Flashcard" id="U8L-uw-ona">
+                    <navigationItem key="navigationItem" title="Flashcards" id="U8L-uw-ona">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="URS-yV-P6k">
                             <connections>
                                 <segue destination="h2u-Ci-jCP" kind="show" id="jut-i8-xm7"/>

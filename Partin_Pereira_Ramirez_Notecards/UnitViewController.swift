@@ -45,4 +45,8 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         unitTableView.reloadData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        unitItem.title = "Units"
+    }
+    
 }
