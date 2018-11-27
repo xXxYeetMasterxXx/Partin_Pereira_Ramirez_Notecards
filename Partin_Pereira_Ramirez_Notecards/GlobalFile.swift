@@ -1,4 +1,5 @@
 
+import UIKit
 import Foundation
 
 var theSubjectArray: [Subject] = []
@@ -19,6 +20,7 @@ struct Flashcard: SetNoteType {
     var title: String
     var text1: String
     var text2: String
+    var colour: UIColor
     var type: NoteType
     mutating func beAType (notePicked: String) {
         if notePicked == "Definiton" {
