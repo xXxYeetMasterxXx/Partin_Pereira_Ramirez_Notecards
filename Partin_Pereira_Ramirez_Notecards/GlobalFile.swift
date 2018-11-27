@@ -1,5 +1,11 @@
 
+import UIKit
 import Foundation
+
+/* CODE FOR LATER
+ UIDevice.current.setValue(UIDeviceOrientation.portrait.rawValue, forKey: "orientation")
+ UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+ */
 
 var theSubjectArray: [Subject] = []
 var number: Int = 0
@@ -19,6 +25,7 @@ struct Flashcard: SetNoteType {
     var title: String
     var text1: String
     var text2: String
+    var colour: UIColor
     var type: NoteType
     mutating func beAType (notePicked: String) {
         if notePicked == "Definiton" {
