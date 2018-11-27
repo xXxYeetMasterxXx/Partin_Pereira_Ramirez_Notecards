@@ -9,7 +9,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var studySwitch: UISwitch!
     @IBOutlet weak var remindTextField: UITextField!
     @IBOutlet weak var timePicker: UIDatePicker!
-    
+    var remindTime = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,13 @@ class SettingsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if studySwitch.isOn {
+            remindTime = timePicker.date
+            //let components = Calendar.current.dateComponents([.hour, .minute], from: remindTime)
+            //let hour = components.hour!
+            //let minute = components.minute
+            //print(minute)
             notifications()
+            print("this works")
         }
     }
     
@@ -46,6 +52,7 @@ class SettingsViewController: UIViewController {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: "studyTime", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        print("me too thanjs")
     }
     
     
