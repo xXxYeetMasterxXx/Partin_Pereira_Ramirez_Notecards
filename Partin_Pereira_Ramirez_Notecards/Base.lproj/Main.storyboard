@@ -360,6 +360,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-br-SLF">
+                                <rect key="frame" x="0.0" y="156" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="h2u-Ci-jCP" id="clV-VV-2FT"/>
+                                    <outlet property="delegate" destination="h2u-Ci-jCP" id="SlP-NL-QAO"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="89E-kc-GND"/>
@@ -367,6 +375,7 @@
                     <navigationItem key="navigationItem" title="Add Flashcard" id="VIa-kA-qYY"/>
                     <connections>
                         <outlet property="colourButton" destination="c2u-T1-opl" id="Nyc-kc-dKB"/>
+                        <outlet property="picker" destination="uyH-br-SLF" id="O6y-vJ-Dmp"/>
                         <outlet property="titleTextField" destination="QTg-X8-nLD" id="oRm-vy-g1u"/>
                     </connections>
                 </viewController>

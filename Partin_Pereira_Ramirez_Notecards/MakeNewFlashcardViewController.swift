@@ -2,10 +2,37 @@
 
 import UIKit
 
-class MakeNewFlashcardViewController: UIViewController {
+class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    var pickerArray: [String] = ["Note", "Question", "Definition"]
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerArray.count
+    }
+    
+    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        <#code#>
+    }*/
+    
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var colourButton: UIButton!
+    
+    @IBOutlet weak var picker: UIPickerView!
+    
+    
+    
+    
+    
     
     var flashcardMade = Flashcard(title: "", text1: "", text2: "", colour: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), type: .note)
    
