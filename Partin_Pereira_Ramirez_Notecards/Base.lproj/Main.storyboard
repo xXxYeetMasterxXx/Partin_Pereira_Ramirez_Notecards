@@ -335,7 +335,7 @@
         <!--Add Flashcard-->
         <scene sceneID="r29-19-o1X">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="h2u-Ci-jCP" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="h2u-Ci-jCP" customClass="MakeNewFlashcardViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cHE-YJ-yGb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,12 +348,18 @@
                                 <state key="normal" title="Select Colour">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="colourButtonPressed:" destination="h2u-Ci-jCP" eventType="touchUpInside" id="9V7-GW-9ra"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="89E-kc-GND"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Flashcard" id="VIa-kA-qYY"/>
+                    <connections>
+                        <outlet property="colourButton" destination="c2u-T1-opl" id="Nyc-kc-dKB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMc-iT-0fp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
