@@ -17,6 +17,11 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
     
+    @IBAction func unwind3(_ sender: UIStoryboardSegue) {
+        if let sender3 = sender.source as? MakeNewFlashcardViewController {
+            theSubjectArray[number].units[number2].flashcards.append(sender3.flashcardMade)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

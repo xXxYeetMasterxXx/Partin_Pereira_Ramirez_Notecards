@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5404910221ADBB5F000E4148 /* MakeNewFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5404910121ADBB5F000E4148 /* MakeNewFlashcardViewController.swift */; };
 		546D7E1021A71B4200C617AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546D7E0F21A71B4200C617AC /* AppDelegate.swift */; };
 		546D7E1221A71B4200C617AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546D7E1121A71B4200C617AC /* ViewController.swift */; };
 		546D7E1521A71B4200C617AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 546D7E1321A71B4200C617AC /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5404910121ADBB5F000E4148 /* MakeNewFlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNewFlashcardViewController.swift; sourceTree = "<group>"; };
 		546D7E0C21A71B4200C617AC /* Partin_Pereira_Ramirez_Notecards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partin_Pereira_Ramirez_Notecards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		546D7E0F21A71B4200C617AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		546D7E1121A71B4200C617AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				54F04C8A21A873550033A3A0 /* UnitViewController.swift */,
 				54E253D521AC5DE8000BBE1B /* MakeNewUnitViewController.swift */,
 				54BDBA2421AC723C004C2A0F /* FlashcardViewController.swift */,
+				5404910121ADBB5F000E4148 /* MakeNewFlashcardViewController.swift */,
 				549680E921AC61AF0054D827 /* SettingsViewController.swift */,
 				546D7E1321A71B4200C617AC /* Main.storyboard */,
 				546D7E1621A71B4200C617AC /* Assets.xcassets */,
@@ -280,6 +283,7 @@
 				54F04C8B21A873550033A3A0 /* UnitViewController.swift in Sources */,
 				54E253D621AC5DE8000BBE1B /* MakeNewUnitViewController.swift in Sources */,
 				54F04C8F21A87B450033A3A0 /* MakeNewSubjectViewController.swift in Sources */,
+				5404910221ADBB5F000E4148 /* MakeNewFlashcardViewController.swift in Sources */,
 				546D7E1021A71B4200C617AC /* AppDelegate.swift in Sources */,
 				54BDBA2521AC723C004C2A0F /* FlashcardViewController.swift in Sources */,
 			);
