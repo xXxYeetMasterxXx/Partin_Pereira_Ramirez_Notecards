@@ -168,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="1863.7681159420292" y="132.88043478260872"/>
         </scene>
-        <!--Flashcard View Controller-->
+        <!--Flashcard-->
         <scene sceneID="Dk9-Ya-cjo">
             <objects>
                 <viewController id="gKD-BT-Wfl" customClass="FlashcardViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,7 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nfn-RC-ZA6">
-                                <rect key="frame" x="20" y="87" width="374" height="629"/>
+                                <rect key="frame" x="20" y="87" width="374" height="611"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -215,6 +215,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OlR-ng-ktG"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Flashcard" id="U8L-uw-ona">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="URS-yV-P6k">
+                            <connections>
+                                <segue destination="h2u-Ci-jCP" kind="show" id="jut-i8-xm7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ti-CS-gtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -290,7 +299,7 @@
             </objects>
             <point key="canvasLocation" x="1863.7681159420292" y="902.44565217391312"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Flashcard-->
         <scene sceneID="r29-19-o1X">
             <objects>
                 <viewController id="h2u-Ci-jCP" sceneMemberID="viewController">
@@ -300,6 +309,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="89E-kc-GND"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Flashcard" id="VIa-kA-qYY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMc-iT-0fp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
