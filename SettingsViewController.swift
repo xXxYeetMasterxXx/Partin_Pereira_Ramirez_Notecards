@@ -13,7 +13,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        studySwitch.isOn = false
         remindTextField.isHidden = true
         timePicker.isHidden = true
         
@@ -24,6 +23,8 @@ class SettingsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if studySwitch.isOn {
             getMinutes()
+        } else {
+            cancel()
         }
     }
     
@@ -51,13 +52,15 @@ class SettingsViewController: UIViewController {
         content.title = safeText
         content.badge = 1
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false) //SHOULD BE TRUE, turn on true once we know how to delete notifications
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: true)
         let request = UNNotificationRequest(identifier: "studyTime", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         print(seconds)
         print("me too thanjs")
     }
-    
+    func cancel() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
     
     
 
