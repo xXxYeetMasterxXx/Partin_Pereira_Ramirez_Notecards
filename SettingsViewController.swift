@@ -23,13 +23,7 @@ class SettingsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if studySwitch.isOn {
-            remindTime = timePicker.date
-            //let components = Calendar.current.dateComponents([.hour, .minute], from: remindTime)
-            //let hour = components.hour!
-            //let minute = components.minute
-            //print(minute)
-            notifications()
-            print("this works")
+            getMinutes()
         }
     }
     
@@ -43,15 +37,24 @@ class SettingsViewController: UIViewController {
             timePicker.isHidden = true
         }
     }
-    func notifications() {
+    func getMinutes() {
+        remindTime = timePicker.date
+        let components = Calendar.current.dateComponents([.hour, .minute], from: remindTime)
+        guard let hour = components.hour else {return}
+        guard let minute = components.minute else {return}
+        let minutes = Double((60 * hour) + minute)
+        notifications(seconds: (60 * minutes))
+    }
+    func notifications(seconds: Double) {
         let content = UNMutableNotificationContent()
         guard let safeText = remindTextField.text else {return}
         content.title = safeText
         content.badge = 1
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false) //SHOULD BE TRUE, turn on true once we know how to delete notifications
         let request = UNNotificationRequest(identifier: "studyTime", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        print(seconds)
         print("me too thanjs")
     }
     
