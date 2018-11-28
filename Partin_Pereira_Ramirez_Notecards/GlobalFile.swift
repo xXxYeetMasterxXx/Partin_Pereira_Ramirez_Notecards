@@ -27,7 +27,8 @@ struct Flashcard: SetNoteType {
     var text2: String
     var colour: UIColor
     var type: NoteType
-    mutating func beAType (notePicked: String) {
+    mutating func beAType (notePicked: String) -> NoteType {
+        var type: NoteType
         if notePicked == "Definiton" {
             type = .definiton
         } else if notePicked == "Question" {
@@ -35,6 +36,7 @@ struct Flashcard: SetNoteType {
         } else {
             type = .note
         }
+        return type
     }
 }
 
@@ -46,5 +48,5 @@ enum NoteType {
 
 protocol SetNoteType {
     var type: NoteType {get set}
-    mutating func beAType (notePicked: String)
+    mutating func beAType (notePicked: String) -> NoteType
 }

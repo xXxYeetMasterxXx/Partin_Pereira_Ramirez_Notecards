@@ -4,8 +4,15 @@ import UIKit
 
 class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    var flashcardMade = Flashcard(title: "", text1: "", text2: "", colour: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), type: .note)
+    var typePicked = ""
     var pickerArray: [String] = ["Note", "Question", "Definition"]
     
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var text1TextView: UITextView!
+    @IBOutlet weak var text2TextView: UITextView!
+    @IBOutlet weak var colourButton: UIButton!
+    @IBOutlet weak var picker: UIPickerView!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -20,23 +27,11 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     }
     
     /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        <#code#>
-    }*/
-    
-    
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var colourButton: UIButton!
-    
-    @IBOutlet weak var picker: UIPickerView!
-    
-    
-    
-    
-    
-    
-    var flashcardMade = Flashcard(title: "", text1: "", text2: "", colour: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), type: .note)
+     }*/
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: colourButton.backgroundColor!, type: flashcardMade.beAType(notePicked: typePicked))
+        theSubjectArray[number].units[number2].flashcards.append(flashcardMade)
     }
     
     override func viewDidLoad() {

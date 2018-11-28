@@ -4,7 +4,6 @@ import UIKit
 import UserNotifications
 
 class SettingsViewController: UIViewController {
-
     
     @IBOutlet weak var studySwitch: UISwitch!
     @IBOutlet weak var remindTextField: UITextField!
