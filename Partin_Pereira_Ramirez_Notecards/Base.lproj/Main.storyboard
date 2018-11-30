@@ -288,13 +288,24 @@
                                     <action selector="flashcardButtonAction:" destination="r4f-CM-DXr" eventType="touchUpInside" id="6TI-WQ-17s"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4z-F5-ANG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="e4z-F5-ANG" firstAttribute="top" secondItem="pJW-Mz-Txl" secondAttribute="top" id="ExW-nR-fab"/>
+                            <constraint firstItem="e4z-F5-ANG" firstAttribute="leading" secondItem="pJW-Mz-Txl" secondAttribute="leading" id="JOr-JC-akE"/>
                             <constraint firstItem="v7E-df-KQR" firstAttribute="trailing" secondItem="fFB-PC-Q7K" secondAttribute="trailing" id="U0Y-tk-Q8s"/>
                             <constraint firstItem="v7E-df-KQR" firstAttribute="top" secondItem="fFB-PC-Q7K" secondAttribute="top" id="Ufx-2Z-h6M"/>
+                            <constraint firstAttribute="trailing" secondItem="e4z-F5-ANG" secondAttribute="trailing" id="fZZ-Qd-w9s"/>
                             <constraint firstItem="v7E-df-KQR" firstAttribute="bottom" secondItem="fFB-PC-Q7K" secondAttribute="bottom" id="hHe-hK-Mq6"/>
                             <constraint firstItem="v7E-df-KQR" firstAttribute="leading" secondItem="fFB-PC-Q7K" secondAttribute="leading" id="pUX-eR-FyP"/>
+                            <constraint firstItem="v7E-df-KQR" firstAttribute="top" secondItem="e4z-F5-ANG" secondAttribute="bottom" id="tjx-8r-LVE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fFB-PC-Q7K"/>
                     </view>
