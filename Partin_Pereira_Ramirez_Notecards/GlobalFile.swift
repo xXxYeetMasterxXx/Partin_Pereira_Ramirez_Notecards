@@ -30,7 +30,7 @@ struct Flashcard: SetNoteType {
     var type: NoteType
     mutating func beAType (notePicked: String) -> NoteType {
         var type: NoteType
-        if notePicked == "Definiton" {
+        if notePicked == "Definition" {
             type = .definiton
         } else if notePicked == "Question" {
             type = .question
