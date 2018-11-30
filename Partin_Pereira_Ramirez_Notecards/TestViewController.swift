@@ -1,10 +1,4 @@
-//
 //  TestViewController.swift
-//  Partin_Pereira_Ramirez_Notecards
-//
-//  Created by Period Three on 2018-11-30.
-//  Copyright © 2018 Period Three. All rights reserved.
-//
 
 import UIKit
 
