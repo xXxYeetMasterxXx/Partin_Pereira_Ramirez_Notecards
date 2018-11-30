@@ -478,10 +478,10 @@
             </objects>
             <point key="canvasLocation" x="2650.7246376811595" y="902.44565217391312"/>
         </scene>
-        <!--View Controller-->
+        <!--Test View Controller-->
         <scene sceneID="6yo-XE-vr9">
             <objects>
-                <viewController id="Vcx-HI-HtS" sceneMemberID="viewController">
+                <viewController id="Vcx-HI-HtS" customClass="TestViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OmS-S9-FcL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
