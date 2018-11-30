@@ -29,9 +29,11 @@ class ViewFlashcardViewController: UIViewController {
     @IBAction func flashcardButtonAction(_ sender: Any) {
         if flipped == false {
             flashcardButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text2, for: .normal)
+            UIView.transition(with: flashcardButton, duration: 0.5, options: .transitionFlipFromTop, animations: nil, completion: nil)
             flipped = true
         } else {
             flashcardButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
+            UIView.transition(with: flashcardButton, duration: 0.5, options: .transitionFlipFromBottom, animations: nil, completion: nil)
             flipped = false
         }
     }
