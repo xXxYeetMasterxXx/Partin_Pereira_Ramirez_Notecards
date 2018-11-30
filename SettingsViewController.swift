@@ -15,8 +15,7 @@ class SettingsViewController: UIViewController {
         remindTextField.isHidden = true
         timePicker.isHidden = true
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
-        })
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,7 +26,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    
     @IBAction func switchPressed(_ sender: Any) {
         if studySwitch.isOn == true {
             remindTextField.isHidden = false
@@ -37,6 +35,7 @@ class SettingsViewController: UIViewController {
             timePicker.isHidden = true
         }
     }
+    
     func getMinutes() {
         remindTime = timePicker.date
         let components = Calendar.current.dateComponents([.hour, .minute], from: remindTime)
@@ -45,22 +44,21 @@ class SettingsViewController: UIViewController {
         let minutes = Double((60 * hour) + minute)
         notifications(seconds: (60 * minutes))
     }
+    
     func notifications(seconds: Double) {
         let content = UNMutableNotificationContent()
         guard let safeText = remindTextField.text else {return}
         content.title = safeText
         content.badge = 1
-        
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: true)
         let request = UNNotificationRequest(identifier: "studyTime", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         print(seconds)
         print("me too thanjs")
     }
+    
     func cancel() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
-    
-
 }
