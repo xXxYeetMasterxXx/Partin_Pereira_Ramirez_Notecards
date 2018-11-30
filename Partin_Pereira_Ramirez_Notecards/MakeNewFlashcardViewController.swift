@@ -32,7 +32,7 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
         } else {
             text2TextView.isHidden = false
         }
-        number3 = row
+        numberForPicker = row
      }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

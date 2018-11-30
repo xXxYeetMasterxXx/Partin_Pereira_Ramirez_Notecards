@@ -16,6 +16,13 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
             theSubjectArray[number].units[number2].flashcards[indexPath.row].title = "Flashcard \(indexPath.row + 1)"
         }
         ourCells3.textLabel?.text = theSubjectArray[number].units[number2].flashcards[indexPath.row].title
+        if theSubjectArray[number].units[number2].flashcards[indexPath.row].type == .note {
+            ourCells3.detailTextLabel?.text = "Note"
+        } else if theSubjectArray[number].units[number2].flashcards[indexPath.row].type == .question {
+            ourCells3.detailTextLabel?.text = "Question"
+        } else {
+            ourCells3.detailTextLabel?.text = "Definiton"
+        }
         return ourCells3
     }
     
