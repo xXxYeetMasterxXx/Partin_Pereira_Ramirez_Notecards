@@ -5,7 +5,6 @@ import UIKit
 class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var flashcardMade = Flashcard(title: "", text1: "", text2: "", colour: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), type: .note)
-    var typePicked = ""
     var pickerArray: [String] = ["Note", "Question", "Definition"]
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -26,11 +25,12 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
         return pickerArray.count
     }
     
-    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-     }*/
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        number3 = row
+     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: colourButton.backgroundColor!, type: flashcardMade.beAType(notePicked: typePicked))
+        flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: colourButton.backgroundColor!, type: flashcardMade.beAType(notePicked: pickerArray[number3]))
         theSubjectArray[number].units[number2].flashcards.append(flashcardMade)
     }
     
