@@ -3,6 +3,9 @@
 import UIKit
 
 class FlashcardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var flashcardsTableView: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return theSubjectArray[number].units[number2].flashcards.count
     }
@@ -28,7 +31,10 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        flashcardsTableView.reloadData()
+    }
+    
 }
