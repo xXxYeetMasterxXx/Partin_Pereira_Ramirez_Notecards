@@ -258,6 +258,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flashcardsTableView" destination="Nfn-RC-ZA6" id="Vvq-dg-6bz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ti-CS-gtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
