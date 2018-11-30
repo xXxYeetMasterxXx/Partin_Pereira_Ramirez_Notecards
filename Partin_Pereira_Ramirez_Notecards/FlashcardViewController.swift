@@ -19,6 +19,7 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         theSubjectArray[number].units[number2].flashcards.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
