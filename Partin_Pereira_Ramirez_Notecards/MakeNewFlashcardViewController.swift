@@ -31,7 +31,6 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: colourButton.backgroundColor!, type: flashcardMade.beAType(notePicked: pickerArray[number3]))
-        theSubjectArray[number].units[number2].flashcards.append(flashcardMade)
     }
     
     override func viewDidLoad() {
