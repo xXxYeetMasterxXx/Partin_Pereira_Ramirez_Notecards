@@ -16,7 +16,10 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        theSubjectArray[number].units[number2].flashcards.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
     @IBAction func unwind3(_ sender: UIStoryboardSegue) {
         if let sender3 = sender.source as? MakeNewFlashcardViewController {
             theSubjectArray[number].units[number2].flashcards.append(sender3.flashcardMade)
