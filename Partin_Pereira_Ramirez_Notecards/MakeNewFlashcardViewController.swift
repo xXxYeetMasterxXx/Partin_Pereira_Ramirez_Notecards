@@ -4,6 +4,7 @@ import UIKit
 
 class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    var numberForPicker = 0
     var flashcardMade = Flashcard(title: "", text1: "", text2: "", colour: #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1), type: .note)
     var pickerArray: [String] = ["Note", "Question", "Definition"]
     
@@ -26,16 +27,25 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == 0 {
+            text2TextView.isHidden = true
+        } else {
+            text2TextView.isHidden = false
+        }
         number3 = row
      }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: colourButton.backgroundColor!, type: flashcardMade.beAType(notePicked: pickerArray[number3]))
+        flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: colourButton.backgroundColor!, type: flashcardMade.beAType(notePicked: pickerArray[numberForPicker]))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        text2TextView.isHidden = true
     }
     
     @IBAction func colourButtonPressed(_ sender: Any) {

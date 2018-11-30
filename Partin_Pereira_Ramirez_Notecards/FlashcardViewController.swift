@@ -12,12 +12,15 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCells3 = tableView.dequeueReusableCell(withIdentifier: "FlashCardCell", for: indexPath)
+        if theSubjectArray[number].units[number2].flashcards[indexPath.row].title == "" {
+            theSubjectArray[number].units[number2].flashcards[indexPath.row].title = "Flashcard \(indexPath.row + 1)"
+        }
         ourCells3.textLabel?.text = theSubjectArray[number].units[number2].flashcards[indexPath.row].title
         return ourCells3
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        number3 = indexPath.row
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

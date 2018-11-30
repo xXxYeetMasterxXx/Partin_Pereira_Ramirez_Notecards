@@ -13,9 +13,10 @@ class ViewFlashcardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+        flashcardButton.backgroundColor = theSubjectArray[number].units[number2].flashcards[number3].colour
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         UIDevice.current.setValue(UIDeviceOrientation.portrait.rawValue, forKey: "orientation")
     }
     
