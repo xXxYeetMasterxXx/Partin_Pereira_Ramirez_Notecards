@@ -262,7 +262,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="flashcardsTableView" destination="Nfn-RC-ZA6" id="w2H-6b-OEv"/>
+                        <outlet property="flashcardsTableView" destination="Nfn-RC-ZA6" id="Vvq-dg-6bz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ti-CS-gtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,7 +404,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-iC-OW9">
-                                <rect key="frame" x="20" y="157" width="43" height="21"/>
+                                <rect key="frame" x="20" y="156" width="43" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -428,13 +428,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="89E-kc-GND"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Flashcard" id="VIa-kA-qYY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="g3N-t3-SxP">
-                            <connections>
-                                <segue destination="leI-nc-Tfo" kind="unwind" unwindAction="unwind3:" id="nQi-MM-DGX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add Flashcard" id="VIa-kA-qYY"/>
                     <connections>
                         <outlet property="colourButton" destination="c2u-T1-opl" id="Nyc-kc-dKB"/>
                         <outlet property="picker" destination="uyH-br-SLF" id="O6y-vJ-Dmp"/>
@@ -444,7 +438,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMc-iT-0fp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="leI-nc-Tfo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2650.7246376811595" y="902.44565217391312"/>
         </scene>
