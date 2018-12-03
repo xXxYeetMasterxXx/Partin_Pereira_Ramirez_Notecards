@@ -2,11 +2,6 @@
 import UIKit
 import Foundation
 
-/* CODE FOR LATER
- UIDevice.current.setValue(UIDeviceOrientation.portrait.rawValue, forKey: "orientation")
- UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
- */
-
 var theSubjectArray: [Subject] = []
 var number: Int = 0
 var number2: Int = 0

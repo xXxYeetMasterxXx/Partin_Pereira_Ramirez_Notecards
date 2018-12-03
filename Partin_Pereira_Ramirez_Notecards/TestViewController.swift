@@ -16,8 +16,14 @@ class TestViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        doneButton.isHidden = true
         testArrayOfFlashcards.shuffle()
         titleLabel.text = testArrayOfFlashcards[0].title
+        if testArrayOfFlashcards[0].type == .definiton {
+            questionLabel.text = "What is \(testArrayOfFlashcards[0].text2) the definiton for?"
+        } else {
+            questionLabel.text = "\(testArrayOfFlashcards[0].text1)?"
+        }
     }
     
 }
