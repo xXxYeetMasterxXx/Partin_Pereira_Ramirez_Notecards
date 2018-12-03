@@ -8,12 +8,16 @@ class BrowseViewController: UIViewController {
     
     var browsedFlipped = false
     
-    
+    var counter: Int = 0
     
     
     @IBAction func nextButton(_ sender: Any) {
-        BrowseVContButton.backgroundColor = theSubjectArray[number].units[number2].flashcards[number3].colour
-        BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
+        
+        
+        
+        
+        
+        
     }
     
     
