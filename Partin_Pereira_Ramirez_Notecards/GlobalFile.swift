@@ -7,19 +7,19 @@ var number: Int = 0
 var number2: Int = 0
 var number3: Int = 0
 
-struct Subject: Codable {
+struct Subject/*: Codable*/ {
     var title: String
     var units: [Unit]
 }
 
-struct Unit: Codable {
+struct Unit/*: Codable*/ {
     var title: String
     var flashcards: [Flashcard]
     var average: Int
     static var overallAverage: Int = 0
 }
 
-struct Flashcard: SetNoteType, Codable {
+struct Flashcard: SetNoteType/*, Codable*/ {
     var title: String
     var text1: String
     var text2: String
@@ -49,7 +49,7 @@ protocol SetNoteType {
     mutating func beAType (notePicked: String) -> NoteType
 }
 
-let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+/*let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 let archiveURL = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist")
 
 func saveData() {
@@ -65,4 +65,4 @@ func loadData() {
         pListDecoder.decode(Array<Subject>.self, from: retrivedItemsData) {
         theSubjectArray = decodedNotes
     }
-}
+}*/
