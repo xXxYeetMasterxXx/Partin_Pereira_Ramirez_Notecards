@@ -20,6 +20,8 @@ struct Subject {
 struct Unit {
     var title: String
     var flashcards: [Flashcard]
+    var average: Int
+    static var overallAverage: Int = 0
 }
 
 struct Flashcard: SetNoteType {
