@@ -14,6 +14,11 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     @IBOutlet weak var colourButton: UIButton!
     @IBOutlet weak var picker: UIPickerView!
     
+    @IBOutlet weak var labelOne: UILabel!
+    @IBOutlet weak var labelTwo: UILabel!
+    
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -29,8 +34,20 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 0 {
             text2TextView.isHidden = true
+            labelOne.text = "Enter Note:"
+            labelTwo.isHidden = true
+        } else if row == 1 {
+            text2TextView.isHidden = false
+            labelOne.isHidden = false
+            labelTwo.isHidden = false
+            labelOne.text = "Enter Question:"
+            labelTwo.text = "Enter Answer:"
         } else {
             text2TextView.isHidden = false
+            labelOne.isHidden = false
+            labelTwo.isHidden = false
+            labelOne.text = "Enter Word:"
+            labelTwo.text = "Enter Definition:"
         }
         numberForPicker = row
      }
@@ -39,6 +56,9 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
         flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: colourButton.backgroundColor!, type: flashcardMade.beAType(notePicked: pickerArray[numberForPicker]))
     }
     
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +66,7 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     
     override func viewWillAppear(_ animated: Bool) {
         text2TextView.isHidden = true
+        labelTwo.isHidden = true
     }
     
     @IBAction func colourButtonPressed(_ sender: Any) {

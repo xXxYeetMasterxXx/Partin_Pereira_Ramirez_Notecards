@@ -286,20 +286,48 @@
             </objects>
             <point key="canvasLocation" x="2652.1739130434785" y="132.88043478260872"/>
         </scene>
-        <!--View Controller-->
+        <!--Browse-->
         <scene sceneID="MIb-h9-HQs">
             <objects>
-                <viewController id="BCC-jm-2kd" sceneMemberID="viewController">
+                <viewController id="BCC-jm-2kd" customClass="BrowseViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1b8-aW-w4u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsn-X5-dPP">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="browseVContAction:" destination="BCC-jm-2kd" eventType="touchUpInside" id="Wzl-V9-cof"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wsn-X5-dPP" firstAttribute="top" secondItem="xSP-Fb-RkM" secondAttribute="top" id="IqV-S1-ZQn"/>
+                            <constraint firstItem="Wsn-X5-dPP" firstAttribute="bottom" secondItem="xSP-Fb-RkM" secondAttribute="bottom" id="h5M-58-Uud"/>
+                            <constraint firstItem="Wsn-X5-dPP" firstAttribute="leading" secondItem="xSP-Fb-RkM" secondAttribute="leading" id="kBf-NN-4j6"/>
+                            <constraint firstItem="Wsn-X5-dPP" firstAttribute="trailing" secondItem="xSP-Fb-RkM" secondAttribute="trailing" id="u3j-hm-nOP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xSP-Fb-RkM"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Browse" id="9lb-AJ-h9U">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="c5T-uF-GTo">
+                            <connections>
+                                <action selector="nextButton:" destination="BCC-jm-2kd" id="Fua-ED-w77"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="BrowseVContButton" destination="Wsn-X5-dPP" id="GY5-az-yyM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fe0-1d-z2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3445" y="-615"/>
+            <point key="canvasLocation" x="3444.9275362318845" y="-615.48913043478262"/>
         </scene>
         <!--View Flashcard View Controller-->
         <scene sceneID="gX2-Dt-aHX">
@@ -428,7 +456,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-T1-opl">
-                                <rect key="frame" x="145" y="616" width="125" height="100"/>
+                                <rect key="frame" x="145" y="629" width="125" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -469,12 +497,26 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oQf-Kc-gow">
-                                <rect key="frame" x="0.0" y="488" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="521" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Note:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-xH-bIL">
+                                <rect key="frame" x="11" y="351" width="186" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Changing Label 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w88-8g-zEX">
+                                <rect key="frame" x="11" y="492" width="134" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="89E-kc-GND"/>
@@ -488,6 +530,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="colourButton" destination="c2u-T1-opl" id="Nyc-kc-dKB"/>
+                        <outlet property="labelOne" destination="Zge-xH-bIL" id="f6Y-Xy-uP7"/>
+                        <outlet property="labelTwo" destination="w88-8g-zEX" id="i8Z-SH-Rlx"/>
                         <outlet property="picker" destination="uyH-br-SLF" id="O6y-vJ-Dmp"/>
                         <outlet property="text1TextView" destination="Iox-ZY-tod" id="Vc9-ss-xrT"/>
                         <outlet property="text2TextView" destination="oQf-Kc-gow" id="h73-hB-usT"/>
