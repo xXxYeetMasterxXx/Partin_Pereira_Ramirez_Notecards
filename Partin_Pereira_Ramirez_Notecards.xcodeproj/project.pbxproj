@@ -21,6 +21,7 @@
 		54BDBA2521AC723C004C2A0F /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BDBA2421AC723C004C2A0F /* FlashcardViewController.swift */; };
 		54DB0D4221B1B6E000EE324F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DB0D4121B1B6E000EE324F /* TestViewController.swift */; };
 		54E253D621AC5DE8000BBE1B /* MakeNewUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E253D521AC5DE8000BBE1B /* MakeNewUnitViewController.swift */; };
+		54EDC26521B5941200DC720F /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EDC26421B5941200DC720F /* BrowseViewController.swift */; };
 		54F04C8B21A873550033A3A0 /* UnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F04C8A21A873550033A3A0 /* UnitViewController.swift */; };
 		54F04C8F21A87B450033A3A0 /* MakeNewSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F04C8E21A87B450033A3A0 /* MakeNewSubjectViewController.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		54BDBA2421AC723C004C2A0F /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		54DB0D4121B1B6E000EE324F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		54E253D521AC5DE8000BBE1B /* MakeNewUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNewUnitViewController.swift; sourceTree = "<group>"; };
+		54EDC26421B5941200DC720F /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		54F04C8A21A873550033A3A0 /* UnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitViewController.swift; sourceTree = "<group>"; };
 		54F04C8E21A87B450033A3A0 /* MakeNewSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeNewSubjectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 		546D7E0E21A71B4200C617AC /* Partin_Pereira_Ramirez_Notecards */ = {
 			isa = PBXGroup;
 			children = (
+				54EDC26421B5941200DC720F /* BrowseViewController.swift */,
 				546D7E0F21A71B4200C617AC /* AppDelegate.swift */,
 				546D7E3D21A7248D00C617AC /* GlobalFile.swift */,
 				546D7E1121A71B4200C617AC /* ViewController.swift */,
@@ -289,6 +292,7 @@
 				549680EA21AC61AF0054D827 /* SettingsViewController.swift in Sources */,
 				54F04C8B21A873550033A3A0 /* UnitViewController.swift in Sources */,
 				54E253D621AC5DE8000BBE1B /* MakeNewUnitViewController.swift in Sources */,
+				54EDC26521B5941200DC720F /* BrowseViewController.swift in Sources */,
 				54F04C8F21A87B450033A3A0 /* MakeNewSubjectViewController.swift in Sources */,
 				5404910221ADBB5F000E4148 /* MakeNewFlashcardViewController.swift in Sources */,
 				546D7E1021A71B4200C617AC /* AppDelegate.swift in Sources */,
