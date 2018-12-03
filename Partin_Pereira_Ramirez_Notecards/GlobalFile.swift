@@ -15,8 +15,8 @@ struct Subject {
 struct Unit {
     var title: String
     var flashcards: [Flashcard]
-    var average: Int
-    static var overallAverage: Int = 0
+    var average: Double
+    static var overallAverage: Double = 0
 }
 
 struct Flashcard: SetNoteType {

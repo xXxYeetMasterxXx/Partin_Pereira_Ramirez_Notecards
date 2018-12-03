@@ -33,7 +33,7 @@ class TestViewController: UIViewController {
         doneButton.isHidden = true
         outcomeLabel.isHidden = true
         testArrayOfFlashcards = []
-        recursion(theSubjectArray[number].units[number2].flashcards.count)
+        recursion(theSubjectArray[number].units[number2].flashcards.count - 1)
         testArrayOfFlashcards.shuffle()
         titleLabel.text = testArrayOfFlashcards[spotInArray].title
         if testArrayOfFlashcards[spotInArray].type == .definiton {
@@ -45,7 +45,7 @@ class TestViewController: UIViewController {
     
     @IBAction func answerButtonAction(_ sender: Any) {
         if testArrayOfFlashcards[spotInArray].type == .definiton {
-            if answerTextField.text == testArrayOfFlashcards[spotInArray].text1 {
+            if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text1.lowercased() {
                 correct += 1
                 outcomeLabel.text = "Correct"
                 outcomeLabel.textColor = #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)
@@ -56,7 +56,7 @@ class TestViewController: UIViewController {
                 outcomeLabel.isHidden = false
             }
         } else {
-            if answerTextField.text == testArrayOfFlashcards[spotInArray].text2 {
+            if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text2.lowercased() {
                 correct += 1
                 outcomeLabel.text = "Correct"
                 outcomeLabel.textColor = #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)
@@ -67,13 +67,17 @@ class TestViewController: UIViewController {
                 outcomeLabel.isHidden = false
             }
         }
+        nextButton.isHidden = false
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
         nextButton.isHidden = true
         outcomeLabel.isHidden = true
-        if spotInArray == testArrayOfFlashcards.count {
+        answerTextField.text = ""
+        if spotInArray == testArrayOfFlashcards.count - 1 {
+            answerButton.isHidden = true
             doneButton.isHidden = false
+            theSubjectArray[number].units[number2].average = (round(10*Double(correct / testArrayOfFlashcards.count))/10)
         } else {
             spotInArray += 1
             titleLabel.text = testArrayOfFlashcards[spotInArray].title
