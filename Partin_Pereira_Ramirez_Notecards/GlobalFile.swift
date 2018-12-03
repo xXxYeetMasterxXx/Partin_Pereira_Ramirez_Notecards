@@ -48,3 +48,13 @@ protocol SetNoteType {
     var type: NoteType {get set}
     mutating func beAType (notePicked: String) -> NoteType
 }
+
+let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+let archiveURL = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist")
+
+/*func saveData() {
+    let pListEncoder = PropertyListEncoder()
+    //let encodedItem = try? pListEncoder.encode(theSubjectArray)
+    
+    //try? encodedItem
+}*/

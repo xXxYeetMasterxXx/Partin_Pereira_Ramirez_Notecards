@@ -9,7 +9,7 @@ class TestViewController: UIViewController {
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var answerButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
-    var testArrayOfFlashcards = theSubjectArray[number].units[number2].flashcards
+    var testArrayOfFlashcards: [Flashcard] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,8 @@ class TestViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         doneButton.isHidden = true
+        testArrayOfFlashcards = []
+        recursion(theSubjectArray[number].units[number2].flashcards.count)
         testArrayOfFlashcards.shuffle()
         titleLabel.text = testArrayOfFlashcards[0].title
         if testArrayOfFlashcards[0].type == .definiton {
@@ -26,4 +28,12 @@ class TestViewController: UIViewController {
         }
     }
     
+    func recursion(_ N: Int) {
+        if N > 0 {
+            recursion(N - 1)
+        }
+        if theSubjectArray[number].units[number2].flashcards[N].type != .note {
+            testArrayOfFlashcards.append(theSubjectArray[number].units[number2].flashcards[N])
+        }
+    }
 }
