@@ -515,10 +515,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0f-tX-NOM">
-                                <rect key="frame" x="174" y="467" width="66" height="33"/>
+                                <rect key="frame" x="174" y="401" width="66" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Answer"/>
+                                <connections>
+                                    <action selector="answerButtonAction:" destination="Vcx-HI-HtS" eventType="touchUpInside" id="Ypi-bY-CfV"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Definiton or question stuff here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sea-Ei-mS6">
                                 <rect key="frame" x="20" y="230" width="374" height="30"/>
@@ -536,10 +539,26 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zab-tk-eZ5">
-                                <rect key="frame" x="174" y="532" width="66" height="33"/>
+                                <rect key="frame" x="174" y="625" width="66" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Done"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bl-a9-qyB">
+                                <rect key="frame" x="125" y="452" width="165" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="66"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbk-XQ-3Iq">
+                                <rect key="frame" x="190" y="556" width="36" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="Vcx-HI-HtS" eventType="touchUpInside" id="xfb-sv-7kg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -549,6 +568,8 @@
                         <outlet property="answerButton" destination="Y0f-tX-NOM" id="RQz-Z7-pqM"/>
                         <outlet property="answerTextField" destination="06b-Sb-U4l" id="hkH-B2-AyS"/>
                         <outlet property="doneButton" destination="zab-tk-eZ5" id="Y3P-Dt-Yla"/>
+                        <outlet property="nextButton" destination="jbk-XQ-3Iq" id="NLU-Sd-FdG"/>
+                        <outlet property="outcomeLabel" destination="5Bl-a9-qyB" id="5os-9H-FRJ"/>
                         <outlet property="questionLabel" destination="sea-Ei-mS6" id="bwF-Nl-1l9"/>
                         <outlet property="titleLabel" destination="12e-FK-zmh" id="F95-YT-t85"/>
                     </connections>
