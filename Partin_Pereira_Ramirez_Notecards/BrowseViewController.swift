@@ -12,15 +12,16 @@ class BrowseViewController: UIViewController {
     var counter2: Int = 0
     
     @IBAction func nextButton(_ sender: Any) {
-            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text1, for: .normal)
-            
-            counter += 1
+        counter += 1
+        print("counter")
+        print(theSubjectArray[number].units[number2].flashcards[counter].text1)
+        BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text1, for: .normal)
     }
     
     
     
     override func viewWillAppear(_ animated: Bool) {
-       
+        counter = 0
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
         
         
