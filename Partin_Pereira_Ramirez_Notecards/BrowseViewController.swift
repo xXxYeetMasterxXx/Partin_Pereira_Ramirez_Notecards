@@ -12,24 +12,9 @@ class BrowseViewController: UIViewController {
     var counter2: Int = 0
     
     @IBAction func nextButton(_ sender: Any) {
-        if counter != counter - 1 && counter2 != counter2 - 1 {
-            
-BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text1, for: .normal)
+            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text1, for: .normal)
             
             counter += 1
-            counter2 += 1
-            if browsedFlipped == false {
-
-                BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter2].text2, for: .normal)
-                
-                UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromTop, animations: nil, completion: nil)
-                browsedFlipped = true
-                    
-                }
-        
-        }
-        
-        
     }
     
     
@@ -57,11 +42,11 @@ BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[cou
     
     @IBAction func browseVContAction(_ sender: Any) {
         if browsedFlipped == false {
-            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text2, for: .normal)
+            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter2].text2, for: .normal)
             UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromTop, animations: nil, completion: nil)
             browsedFlipped = true
         } else {
-            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
+            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter2].text1, for: .normal)
             UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromBottom, animations: nil, completion: nil)
             browsedFlipped = false
         }
