@@ -5,7 +5,7 @@ import UIKit
 class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var numberForPicker = 0
-    var flashcardMade = Flashcard(title: "", text1: "", text2: "", colour: #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1), type: .note)
+    var flashcardMade = Flashcard(title: "", text1: "", text2: "", colour: .yellow, type: .note)
     var pickerArray: [String] = ["Note", "Question", "Definition"]
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -52,9 +52,9 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
         numberForPicker = row
      }
    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: colourButton.backgroundColor!, type: flashcardMade.beAType(notePicked: pickerArray[numberForPicker]))
-    }
+    }*/
     
    
     
@@ -72,17 +72,25 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     @IBAction func colourButtonPressed(_ sender: Any) {
         if colourButton.backgroundColor == #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1) {
             colourButton.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+            makeFlashcard(colour: .orange)
         } else if colourButton.backgroundColor == #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1) {
             colourButton.backgroundColor = #colorLiteral(red: 1, green: 0.5409764051, blue: 0.8473142982, alpha: 1)
+            makeFlashcard(colour: .pink)
         } else if colourButton.backgroundColor == #colorLiteral(red: 1, green: 0.5409764051, blue: 0.8473142982, alpha: 1) {
             colourButton.backgroundColor = #colorLiteral(red: 1, green: 0.4127538204, blue: 0.350384295, alpha: 1)
+            makeFlashcard(colour: .red)
         } else if colourButton.backgroundColor == #colorLiteral(red: 1, green: 0.4127538204, blue: 0.350384295, alpha: 1) {
             colourButton.backgroundColor = #colorLiteral(red: 0.3912315071, green: 0.7174404263, blue: 0.8626636863, alpha: 1)
+            makeFlashcard(colour: .blue)
         } else if colourButton.backgroundColor == #colorLiteral(red: 0.3912315071, green: 0.7174404263, blue: 0.8626636863, alpha: 1) {
             colourButton.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            makeFlashcard(colour: .green)
         } else if colourButton.backgroundColor == #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) {
             colourButton.backgroundColor = #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1)
+            makeFlashcard(colour: .green)
         }
     }
-
+    func makeFlashcard(colour: Colour) {
+        flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: colour, type: flashcardMade.beAType(notePicked: pickerArray[numberForPicker]))
+    }
 }

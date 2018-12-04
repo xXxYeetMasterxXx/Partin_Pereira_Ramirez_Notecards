@@ -27,7 +27,7 @@ class BrowseViewController: UIViewController {
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
         
         
-        BrowseVContButton.backgroundColor = theSubjectArray[number].units[number2].flashcards[number3].colour
+        BrowseVContButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
         theSubjectArray[number].units[number2].flashcards.shuffle()
         BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
         
