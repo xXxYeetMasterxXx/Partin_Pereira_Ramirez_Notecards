@@ -7,19 +7,19 @@ var number: Int = 0
 var number2: Int = 0
 var number3: Int = 0
 
-struct Subject/*: Codable*/ {
+struct Subject: Codable {
     var title: String
     var units: [Unit]
 }
 
-struct Unit/*: Codable*/ {
+struct Unit: Codable {
     var title: String
     var flashcards: [Flashcard]
     var average: Double
     static var overallAverage: Double = 0
 }
 
-struct Flashcard: SetNoteType/*, Codable*/ {
+struct Flashcard: SetNoteType, Codable {
     var title: String
     var text1: String
     var text2: String
@@ -38,13 +38,13 @@ struct Flashcard: SetNoteType/*, Codable*/ {
     }
 }
 
-enum NoteType {
+enum NoteType: Int, Codable {
     case definiton
     case question
     case note
 }
 
-enum Colour {
+enum Colour: Int, Codable {
     case yellow
     case orange
     case pink
@@ -75,7 +75,7 @@ func colourPicker(colour: Colour) -> UIColor {
     }
 }
 
-/*let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 let archiveURL = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist")
 
 func saveData() {
@@ -91,4 +91,4 @@ func loadData() {
         pListDecoder.decode(Array<Subject>.self, from: retrivedItemsData) {
         theSubjectArray = decodedNotes
     }
-}*/
+}
