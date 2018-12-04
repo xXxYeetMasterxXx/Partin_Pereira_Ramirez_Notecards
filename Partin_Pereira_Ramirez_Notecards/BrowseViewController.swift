@@ -9,13 +9,25 @@ class BrowseViewController: UIViewController {
     var browsedFlipped = false
     
     var counter: Int = 0
-    
+    var counter2: Int = 0
     
     @IBAction func nextButton(_ sender: Any) {
+        if counter != counter - 1 && counter2 != counter2 - 1 {
+            
+BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text1, for: .normal)
+            
+            counter += 1
+            counter2 += 1
+            if browsedFlipped == false {
+
+                BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter2].text2, for: .normal)
+                
+                UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromTop, animations: nil, completion: nil)
+                browsedFlipped = true
+                    
+                }
         
-        
-        
-        
+        }
         
         
     }
