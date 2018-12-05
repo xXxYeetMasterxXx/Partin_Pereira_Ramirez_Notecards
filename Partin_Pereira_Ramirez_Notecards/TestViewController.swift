@@ -77,7 +77,6 @@ class TestViewController: UIViewController {
         if spotInArray == testArrayOfFlashcards.count - 1 {
             answerButton.isHidden = true
             doneButton.isHidden = false
-            theSubjectArray[number].units[number2].average = (round(10*Double(correct / testArrayOfFlashcards.count))/10)
         } else {
             spotInArray += 1
             titleLabel.text = testArrayOfFlashcards[spotInArray].title
