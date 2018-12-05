@@ -66,8 +66,14 @@ class TestViewController: UIViewController {
             }
             question += 1
         }
-        answerButton.isEnabled = false
-        nextButton.isHidden = false
+        if spotInArray == testArrayOfFlashcards.count - 1 {
+            answerButton.isHidden = true
+            doneButton.isHidden = false
+            answerTextField.isEnabled = false
+        } else {
+            answerButton.isEnabled = false
+            nextButton.isHidden = false
+        }
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
@@ -75,17 +81,12 @@ class TestViewController: UIViewController {
         nextButton.isHidden = true
         outcomeLabel.isHidden = true
         answerTextField.text = ""
-        if spotInArray == testArrayOfFlashcards.count - 1 {
-            answerButton.isHidden = true
-            doneButton.isHidden = false
+        spotInArray += 1
+        titleLabel.text = testArrayOfFlashcards[spotInArray].title
+        if testArrayOfFlashcards[spotInArray].type == .definiton {
+            questionLabel.text = "What is \(testArrayOfFlashcards[spotInArray].text2) the definiton for?"
         } else {
-            spotInArray += 1
-            titleLabel.text = testArrayOfFlashcards[spotInArray].title
-            if testArrayOfFlashcards[spotInArray].type == .definiton {
-                questionLabel.text = "What is \(testArrayOfFlashcards[spotInArray].text2) the definiton for?"
-            } else {
-                questionLabel.text = "\(testArrayOfFlashcards[spotInArray].text1)?"
-            }
+            questionLabel.text = "\(testArrayOfFlashcards[spotInArray].text1)?"
         }
     }
     
