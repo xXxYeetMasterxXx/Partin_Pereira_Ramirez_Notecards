@@ -580,6 +580,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
+                                    <action selector="doneButtonAction:" destination="Vcx-HI-HtS" eventType="touchUpInside" id="CoE-Ab-QyL"/>
                                     <segue destination="yFk-5L-kcY" kind="show" id="zqh-iZ-5iH"/>
                                 </connections>
                             </button>

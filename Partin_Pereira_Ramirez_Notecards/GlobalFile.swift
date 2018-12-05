@@ -3,6 +3,7 @@ import UIKit
 import Foundation
 
 var theSubjectArray: [Subject] = []
+var theTestArray: [Test] = []
 var number: Int = 0
 var number2: Int = 0
 var number3: Int = 0
@@ -15,7 +16,7 @@ struct Subject: Codable {
 struct Unit: Codable {
     var title: String
     var flashcards: [Flashcard]
-    var personalBest: Int
+    var personalBest: Double = 0
 }
 
 struct Flashcard: SetNoteType, Codable {
@@ -41,10 +42,12 @@ struct Test: Codable {
     var title: String
     var amount: Int
     var correct: Int
+    var percent: Double
     var amoundOfQuestions: Int
+    var testedUnit: Unit
     static var overallAverage: [Double] = []
     func findIncorrectAndPercent (items: Int, correct: Int) -> (Int, Double) {
-        return (items - correct, (round(Double(10*(correct/items)/10))))
+        return (items - correct, (round(Double(10*(correct / items * 100)/10))))
     }
     func findDefinitions (items: Int, questions: Int) -> Int {
         return items - questions
@@ -54,7 +57,7 @@ struct Test: Codable {
         for index in 0 ..< overallArray.count {
             overallPercent += overallArray[index]
         }
-        return overallPercent / Double(overallArray.count)
+        return round(10*(overallPercent / Double(overallArray.count * 100)/10))
     }
 }
 
