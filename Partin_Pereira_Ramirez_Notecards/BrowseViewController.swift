@@ -43,11 +43,11 @@ class BrowseViewController: UIViewController {
     
     @IBAction func browseVContAction(_ sender: Any) {
         if browsedFlipped == false {
-            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter2].text2, for: .normal)
+            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text2, for: .normal)
             UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromTop, animations: nil, completion: nil)
             browsedFlipped = true
         } else {
-            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter2].text1, for: .normal)
+            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text1, for: .normal)
             UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromBottom, animations: nil, completion: nil)
             browsedFlipped = false
         }
