@@ -5,9 +5,7 @@ import UIKit
 class FlashcardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var flashcardsTableView: UITableView!
-    
     @IBOutlet weak var flashVCBrowseButton: UIBarButtonItem!
-    
     @IBOutlet weak var flashTestYourselfButton: UIBarButtonItem!
     
     
