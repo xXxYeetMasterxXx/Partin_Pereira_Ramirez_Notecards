@@ -12,6 +12,7 @@ class MakeNewSubjectViewController: UIViewController {
         if let safeSubject = subjectLabel.text {
             madeSubject.title = safeSubject
         }
+        saveData()
     }
     
     override func viewDidLoad() {

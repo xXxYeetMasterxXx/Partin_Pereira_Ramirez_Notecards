@@ -12,6 +12,7 @@ class MakeNewUnitViewController: UIViewController {
         if let safeUnit = unitLabel.text {
             unitMade.title = safeUnit
         }
+        saveData()
     }
     
     override func viewDidLoad() {

@@ -33,6 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         theSubjectArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
+        saveData()
     }
 
     @IBAction func unwind(_ sender: UIStoryboardSegue) {
