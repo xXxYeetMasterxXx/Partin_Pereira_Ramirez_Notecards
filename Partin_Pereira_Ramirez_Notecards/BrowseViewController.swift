@@ -10,12 +10,15 @@ class BrowseViewController: UIViewController {
     
     var counter: Int = 0
     var counter2: Int = 0
+    var flashcardsArray: [Flashcard] = []
     
     @IBAction func nextButton(_ sender: Any) {
-        counter += 1
-        print("counter")
-        print(theSubjectArray[number].units[number2].flashcards[counter].text1)
-        BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text1, for: .normal)
+        
+        if (flashcardsArray.count - 1) >= (counter + 1) {
+            counter += 1
+            BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
+            browsedFlipped = false
+        }
     }
     
     
@@ -23,13 +26,12 @@ class BrowseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         counter = 0
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
-        
-        
+        flashcardsArray = theSubjectArray[number].units[number2].flashcards
         BrowseVContButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
-        theSubjectArray[number].units[number2].flashcards.shuffle()
-        BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
+        flashcardsArray.shuffle()
+        BrowseVContButton.setTitle(flashcardsArray[number3].text1, for: .normal)
         
-        if theSubjectArray[number].units[number2].flashcards[number3].type == .note {
+        if flashcardsArray[number3].type == .note {
             BrowseVContButton.isEnabled = false
         }
     }
@@ -43,11 +45,11 @@ class BrowseViewController: UIViewController {
     
     @IBAction func browseVContAction(_ sender: Any) {
         if browsedFlipped == false {
-            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text2, for: .normal)
+            BrowseVContButton.setTitle(flashcardsArray[counter].text2, for: .normal)
             UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromTop, animations: nil, completion: nil)
             browsedFlipped = true
         } else {
-            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text1, for: .normal)
+            BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
             UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromBottom, animations: nil, completion: nil)
             browsedFlipped = false
         }
