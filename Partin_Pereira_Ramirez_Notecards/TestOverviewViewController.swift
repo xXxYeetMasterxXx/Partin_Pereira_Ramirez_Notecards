@@ -33,11 +33,11 @@ class TestOverviewViewController: UIViewController {
         personalBestLabel.text = String(testToDisplay.testedUnit.personalBest)
         overallAverageLabel.text = String(testToDisplay.findOverallAverage(overallArray: Test.overallAverage))
         switch testToDisplay.percent {
-        case 0 ... 50:
+        case 0 ... 49.9:
             stickerImage.image = stickers[0]
-        case 50 ... 70:
+        case 50 ... 69.9:
             stickerImage.image = stickers[1]
-        case 70 ... 80:
+        case 70 ... 79.9:
             stickerImage.image = stickers[2]
         case 100:
             stickerImage.image = stickers[4]
