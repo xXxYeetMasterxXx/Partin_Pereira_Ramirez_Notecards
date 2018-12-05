@@ -39,9 +39,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func unwind(_ sender: UIStoryboardSegue) {
         if let sender = sender.source as? MakeNewSubjectViewController {
             theSubjectArray.append(sender.madeSubject)
-        } /*else if let sender = sender.source as? SettingsViewController {
-            
-        }*/
+        }
+        saveData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
