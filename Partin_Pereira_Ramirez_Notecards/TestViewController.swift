@@ -91,7 +91,7 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func doneButtonAction(_ sender: Any) {
-        thisTest = Test(title: "\(theSubjectArray[number].units[number2].title) Test", amount: testArrayOfFlashcards.count, correct: correct, percent: thisTest.findIncorrectAndPercent(items: testArrayOfFlashcards.count, correct: correct).1, amoundOfQuestions: question, testedUnit: theSubjectArray[number].units[number2])
+        thisTest = Test(title: "\(theSubjectArray[number].units[number2].title) Test", amount: testArrayOfFlashcards.count, correct: correct, percent: thisTest.findPercent(items: Double(testArrayOfFlashcards.count), correct: Double(correct)), amoundOfQuestions: question, testedUnit: theSubjectArray[number].units[number2])
         Test.overallAverage.append(thisTest.percent)
         theTestArray.append(thisTest)
     }

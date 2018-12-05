@@ -46,8 +46,11 @@ struct Test: Codable {
     var amoundOfQuestions: Int
     var testedUnit: Unit
     static var overallAverage: [Double] = []
-    func findIncorrectAndPercent (items: Int, correct: Int) -> (Int, Double) {
-        return (items - correct, (round(Double(10*(correct / items * 100)/10))))
+    func findIncorrect (items: Int, correct: Int) -> Int {
+        return items - correct
+    }
+    func findPercent (items: Double, correct: Double) -> Double {
+        return round(10*(correct / items * 100)*10)
     }
     func findDefinitions (items: Int, questions: Int) -> Int {
         return items - questions
