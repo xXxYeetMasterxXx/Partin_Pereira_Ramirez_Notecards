@@ -14,7 +14,7 @@ class TestOverviewViewController: UIViewController {
     @IBOutlet weak var personalBestLabel: UILabel!
     @IBOutlet weak var overallAverageLabel: UILabel!
     @IBOutlet weak var stickerImage: UIImageView!
-    var stickers: [UIImage] = [#imageLiteral(resourceName: "nice work"), #imageLiteral(resourceName: "very nice"), #imageLiteral(resourceName: "great job"), #imageLiteral(resourceName: "meWOW")]
+    var stickers: [UIImage] = [#imageLiteral(resourceName: "try again"), #imageLiteral(resourceName: "nice work"), #imageLiteral(resourceName: "very nice"), #imageLiteral(resourceName: "great job"), #imageLiteral(resourceName: "meWOW")]
     var testToDisplay = Test(title: "", amount: 0, correct: 0, percent: 0, amoundOfQuestions: 0, testedUnit: Unit(title: "Unit", flashcards: [], personalBest: 0))
     
     override func viewDidLoad() {
@@ -32,6 +32,18 @@ class TestOverviewViewController: UIViewController {
         amountOfDefinitionsLabel.text = String(testToDisplay.findDefinitions(items: testToDisplay.amount, questions: testToDisplay.amoundOfQuestions))
         personalBestLabel.text = String(testToDisplay.testedUnit.personalBest)
         overallAverageLabel.text = String(testToDisplay.findOverallAverage(overallArray: Test.overallAverage))
+        switch testToDisplay.percent {
+        case 0 ... 49.9:
+            stickerImage.image = stickers[0]
+        case 50 ... 69.9:
+            stickerImage.image = stickers[1]
+        case 70 ... 79.9:
+            stickerImage.image = stickers[2]
+        case 100:
+            stickerImage.image = stickers[4]
+        default:
+            stickerImage.image = stickers[3]
+        }
     }
 
 }

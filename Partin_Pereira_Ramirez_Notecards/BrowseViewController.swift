@@ -21,8 +21,6 @@ class BrowseViewController: UIViewController {
         }
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         counter = 0
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
@@ -39,9 +37,6 @@ class BrowseViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         UIDevice.current.setValue(UIDeviceOrientation.portrait.rawValue, forKey: "orientation")
     }
-   
-    
-    
     
     @IBAction func browseVContAction(_ sender: Any) {
         if browsedFlipped == false {
@@ -56,27 +51,9 @@ class BrowseViewController: UIViewController {
     
     }
     
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
