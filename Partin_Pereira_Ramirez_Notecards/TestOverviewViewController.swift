@@ -26,7 +26,7 @@ class TestOverviewViewController: UIViewController {
         unitTitleLabel.text = testToDisplay.title
         amountOfItemsLabel.text = String(testToDisplay.amount)
         amountCorrectLabel.text = String(testToDisplay.correct)
-        amountIncorrectLabel.text = String(testToDisplay.findIncorrectAndPercent(items: testToDisplay.amount, correct: testToDisplay.correct).0)
+        amountIncorrectLabel.text = String(testToDisplay.findIncorrect(items: testToDisplay.amount, correct: testToDisplay.correct))
         percentLabel.text = String(testToDisplay.percent)
         amountOfQuestionsLabel.text = String(testToDisplay.amoundOfQuestions)
         amountOfDefinitionsLabel.text = String(testToDisplay.findDefinitions(items: testToDisplay.amount, questions: testToDisplay.amoundOfQuestions))
