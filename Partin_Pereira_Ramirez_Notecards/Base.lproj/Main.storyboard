@@ -279,6 +279,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="flashTestYourselfButton" destination="ghi-4e-gIq" id="2m4-2Z-HMP"/>
+                        <outlet property="flashVCBrowseButton" destination="goh-Ah-GNv" id="cvl-wo-xxj"/>
                         <outlet property="flashcardsTableView" destination="Nfn-RC-ZA6" id="Vvq-dg-6bz"/>
                     </connections>
                 </viewController>

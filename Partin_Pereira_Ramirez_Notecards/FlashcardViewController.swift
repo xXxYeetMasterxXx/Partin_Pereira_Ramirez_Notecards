@@ -6,6 +6,11 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var flashcardsTableView: UITableView!
     
+    @IBOutlet weak var flashVCBrowseButton: UIBarButtonItem!
+    
+    @IBOutlet weak var flashTestYourselfButton: UIBarButtonItem!
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return theSubjectArray[number].units[number2].flashcards.count
     }
@@ -47,6 +52,13 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func viewWillAppear(_ animated: Bool) {
         flashcardsTableView.reloadData()
+        if theSubjectArray[number].units[number2].flashcards.isEmpty {
+            flashVCBrowseButton.isEnabled = false
+            flashTestYourselfButton.isEnabled = false
+        } else {
+            flashVCBrowseButton.isEnabled = true
+            flashTestYourselfButton.isEnabled = true
+        }
     }
     
 }
