@@ -43,6 +43,7 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
         if let sender3 = sender.source as? MakeNewFlashcardViewController {
             theSubjectArray[number].units[number2].flashcards.append(sender3.flashcardMade)
         }
+        saveData()
     }
 
     override func viewDidLoad() {
