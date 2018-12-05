@@ -50,7 +50,7 @@ struct Test: Codable {
         return items - correct
     }
     func findPercent (items: Double, correct: Double) -> Double {
-        return round(10*(correct / items * 100)*10)
+        return round(10*(correct / items)*10)
     }
     func findDefinitions (items: Int, questions: Int) -> Int {
         return items - questions
@@ -60,7 +60,7 @@ struct Test: Codable {
         for index in 0 ..< overallArray.count {
             overallPercent += overallArray[index]
         }
-        return round(10*(overallPercent / Double(overallArray.count * 100)/10))
+        return round(10*(overallPercent / Double(overallArray.count)/10))
     }
 }
 
