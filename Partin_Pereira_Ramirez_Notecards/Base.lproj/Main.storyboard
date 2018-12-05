@@ -371,6 +371,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fFB-PC-Q7K"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1f7-Rv-3Vx">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="kBV-tu-Kmh">
+                            <connections>
+                                <segue destination="h2u-Ci-jCP" kind="show" id="JIZ-w2-zuR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="flashcardButton" destination="v7E-df-KQR" id="1pI-Ne-Yxc"/>
                     </connections>
@@ -878,4 +885,7 @@
             <point key="canvasLocation" x="265" y="133"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JIZ-w2-zuR"/>
+    </inferredMetricsTieBreakers>
 </document>
