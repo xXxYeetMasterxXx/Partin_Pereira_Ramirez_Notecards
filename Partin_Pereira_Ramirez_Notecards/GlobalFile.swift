@@ -15,8 +15,7 @@ struct Subject: Codable {
 struct Unit: Codable {
     var title: String
     var flashcards: [Flashcard]
-    var average: Double
-    static var overallAverage: Double = 0
+    var personalBest: Int
 }
 
 struct Flashcard: SetNoteType, Codable {
@@ -35,6 +34,27 @@ struct Flashcard: SetNoteType, Codable {
             type = .note
         }
         return type
+    }
+}
+
+struct Test: Codable {
+    var title: String
+    var amount: Int
+    var correct: Int
+    var amoundOfQuestions: Int
+    static var overallAverage: [Double] = []
+    func findIncorrectAndPercent (items: Int, correct: Int) -> (Int, Double) {
+        return (items - correct, (round(Double(10*(correct/items)/10))))
+    }
+    func findDefinitions (items: Int, questions: Int) -> Int {
+        return items - questions
+    }
+    func findOverallAverage (overallArray: [Double]) -> Double {
+        var overallPercent: Double = 0
+        for index in 0 ..< overallArray.count {
+            overallPercent += overallArray[index]
+        }
+        return overallPercent / Double(overallArray.count)
     }
 }
 
@@ -81,7 +101,6 @@ let archiveURL = documentsDirectory.appendingPathComponent("notes_test").appendi
 func saveData() {
     let pListEncoder = PropertyListEncoder()
     let encodedItem = try? pListEncoder.encode(theSubjectArray)
-    
     try? encodedItem?.write(to: archiveURL, options: .noFileProtection)
 }
 
