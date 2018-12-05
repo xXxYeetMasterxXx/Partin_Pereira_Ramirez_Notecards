@@ -9,25 +9,23 @@ class BrowseViewController: UIViewController {
     var browsedFlipped = false
     
     var counter: Int = 0
-    
+    var counter2: Int = 0
     
     @IBAction func nextButton(_ sender: Any) {
-        
-        
-        
-        
-        
-        
+        counter += 1
+        print("counter")
+        print(theSubjectArray[number].units[number2].flashcards[counter].text1)
+        BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter].text1, for: .normal)
     }
     
     
     
     override func viewWillAppear(_ animated: Bool) {
-       
+        counter = 0
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
         
         
-        BrowseVContButton.backgroundColor = theSubjectArray[number].units[number2].flashcards[number3].colour
+        BrowseVContButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
         theSubjectArray[number].units[number2].flashcards.shuffle()
         BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
         
@@ -45,11 +43,11 @@ class BrowseViewController: UIViewController {
     
     @IBAction func browseVContAction(_ sender: Any) {
         if browsedFlipped == false {
-            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text2, for: .normal)
+            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter2].text2, for: .normal)
             UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromTop, animations: nil, completion: nil)
             browsedFlipped = true
         } else {
-            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
+            BrowseVContButton.setTitle(theSubjectArray[number].units[number2].flashcards[counter2].text1, for: .normal)
             UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromBottom, animations: nil, completion: nil)
             browsedFlipped = false
         }

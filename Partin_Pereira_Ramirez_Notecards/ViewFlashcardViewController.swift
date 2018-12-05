@@ -15,7 +15,8 @@ class ViewFlashcardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
-        flashcardButton.backgroundColor = theSubjectArray[number].units[number2].flashcards[number3].colour
+        //flashcardButton.backgroundColor = theSubjectArray[number].units[number2].flashcards[number3].colour
+        flashcardButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
         flashcardButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
         if theSubjectArray[number].units[number2].flashcards[number3].type == .note {
             flashcardButton.isEnabled = false
@@ -37,5 +38,4 @@ class ViewFlashcardViewController: UIViewController {
             flipped = false
         }
     }
-    
 }
