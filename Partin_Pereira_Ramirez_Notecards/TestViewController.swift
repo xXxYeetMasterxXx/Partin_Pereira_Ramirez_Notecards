@@ -12,20 +12,18 @@ class TestViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var outcomeLabel: UILabel!
     var testArrayOfFlashcards: [Flashcard] = []
+    var thisTest = Test(title: "", amount: 0, correct: 0, percent: 0, amoundOfQuestions: 0, testedUnit: theSubjectArray[number].units[number2])
     var correct = 0
+    var question = 0
     var spotInArray = 0
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ourTest = segue.destination as! TestOverviewViewController
+        ourTest.testToDisplay = thisTest
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func recursion(_ N: Int) {
-        if N > 0 {
-            recursion(N - 1)
-        }
-        if theSubjectArray[number].units[number2].flashcards[N].type != .note {
-            testArrayOfFlashcards.append(theSubjectArray[number].units[number2].flashcards[N])
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,11 +64,14 @@ class TestViewController: UIViewController {
                 outcomeLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                 outcomeLabel.isHidden = false
             }
+            question += 1
         }
+        answerButton.isEnabled = false
         nextButton.isHidden = false
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
+        answerButton.isEnabled = true
         nextButton.isHidden = true
         outcomeLabel.isHidden = true
         answerTextField.text = ""
@@ -85,6 +86,21 @@ class TestViewController: UIViewController {
             } else {
                 questionLabel.text = "\(testArrayOfFlashcards[spotInArray].text1)?"
             }
+        }
+    }
+    
+    @IBAction func doneButtonAction(_ sender: Any) {
+        thisTest = Test(title: "\(theSubjectArray[number].units[number2].title) Test", amount: testArrayOfFlashcards.count, correct: correct, percent: thisTest.findIncorrectAndPercent(items: testArrayOfFlashcards.count, correct: correct).1, amoundOfQuestions: question, testedUnit: theSubjectArray[number].units[number2])
+        Test.overallAverage.append(thisTest.percent)
+        theTestArray.append(thisTest)
+    }
+    
+    func recursion(_ N: Int) {
+        if N > 0 {
+            recursion(N - 1)
+        }
+        if theSubjectArray[number].units[number2].flashcards[N].type != .note {
+            testArrayOfFlashcards.append(theSubjectArray[number].units[number2].flashcards[N])
         }
     }
     
