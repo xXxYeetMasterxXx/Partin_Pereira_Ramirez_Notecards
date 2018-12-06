@@ -7,6 +7,7 @@ var theTestArray: [Test] = []
 var number: Int = 0
 var number2: Int = 0
 var number3: Int = 0
+var number4: Int = 0
 
 struct Subject: Codable {
     var title: String

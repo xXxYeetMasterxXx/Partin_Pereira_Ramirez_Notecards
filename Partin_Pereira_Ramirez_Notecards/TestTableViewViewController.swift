@@ -12,16 +12,22 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCellsTest = tableView.dequeueReusableCell(withIdentifier: "TestCell", for: indexPath)
-        ourCellsTest.textLabel?.text = theTestArray[indexPath.row].title
-        ourCellsTest.detailTextLabel?.text = String(theTestArray[indexPath.row].percent)
+        ourCellsTest.textLabel?.text = "\(theTestArray[indexPath.row].title) Test"
+        ourCellsTest.detailTextLabel?.text = "\(theTestArray[indexPath.row].percent)%"
         return ourCellsTest
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        number4 = indexPath.row
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ourTest = segue.destination as! TestOverviewViewController
+        ourTest.testToDisplay = theTestArray[number4]
     }
     
     @IBAction func unwind4(_ sender: UIStoryboardSegue) {
-        saveData()
+        testTableView.reloadData()
     }
     
     override func viewDidLoad() {
