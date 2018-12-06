@@ -109,6 +109,9 @@ func saveData() {
     let pListEncoder = PropertyListEncoder()
     let encodedItem = try? pListEncoder.encode(theSubjectArray)
     try? encodedItem?.write(to: archiveURL, options: .noFileProtection)
+    
+    let newEncodedItem = try? pListEncoder.encode(theTestArray)
+    try? newEncodedItem?.write(to: archiveURL, options: .noFileProtection)
 }
 
 func loadData() {
@@ -116,5 +119,9 @@ func loadData() {
     if let retrivedItemsData = try? Data(contentsOf: archiveURL), let decodedNotes = try?
         pListDecoder.decode(Array<Subject>.self, from: retrivedItemsData) {
         theSubjectArray = decodedNotes
+    }
+    if let retrivedItemsData = try? Data(contentsOf: archiveURL), let decodedNotes = try?
+        pListDecoder.decode(Array<Test>.self, from: retrivedItemsData) {
+        theTestArray = decodedNotes
     }
 }
