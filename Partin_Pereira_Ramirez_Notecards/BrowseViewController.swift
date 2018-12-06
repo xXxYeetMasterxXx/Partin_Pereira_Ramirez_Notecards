@@ -19,6 +19,12 @@ class BrowseViewController: UIViewController {
             BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
             browsedFlipped = false
         }
+        if flashcardsArray[counter].type == .note {
+            BrowseVContButton.isEnabled = false
+            browsedFlipped = false
+        } else {
+            BrowseVContButton.isEnabled = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
