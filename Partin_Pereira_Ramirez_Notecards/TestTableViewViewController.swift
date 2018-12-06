@@ -4,6 +4,10 @@ import UIKit
 
 class TestTableViewViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var greaterThanButton: UIButton!
+    @IBOutlet weak var exactlyButton: UIButton!
+    @IBOutlet weak var lessThanButton: UIButton!
+    @IBOutlet weak var percentTextField: UITextField!
     @IBOutlet weak var testTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,6 +41,15 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewWillAppear(_ animated: Bool) {
         testTableView.reloadData()
+    }
+    
+    @IBAction func greaterThanAction(_ sender: Any) {
+    }
+    
+    @IBAction func exactlyAction(_ sender: Any) {
+    }
+    
+    @IBAction func lessThanAction(_ sender: Any) {
     }
     
 }

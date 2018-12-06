@@ -135,6 +135,9 @@
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Greater Than"/>
+                                <connections>
+                                    <action selector="greaterThanAction:" destination="wDo-8P-rq7" eventType="touchUpInside" id="fLs-Gg-gJ3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT9-va-QlH">
                                 <rect key="frame" x="124" y="64" width="60" height="30"/>
@@ -142,6 +145,9 @@
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Exactly"/>
+                                <connections>
+                                    <action selector="exactlyAction:" destination="wDo-8P-rq7" eventType="touchUpInside" id="XqD-Jr-JPN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRT-Ro-LpL">
                                 <rect key="frame" x="192" y="64" width="116" height="30"/>
@@ -149,12 +155,19 @@
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Less Than"/>
+                                <connections>
+                                    <action selector="lessThanAction:" destination="wDo-8P-rq7" eventType="touchUpInside" id="in8-Rf-KqC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Jbh-dR-LXg"/>
                     </view>
                     <connections>
+                        <outlet property="exactlyButton" destination="XT9-va-QlH" id="A18-Pe-lOn"/>
+                        <outlet property="greaterThanButton" destination="95d-9e-wru" id="fWH-Ba-rHi"/>
+                        <outlet property="lessThanButton" destination="vRT-Ro-LpL" id="lge-tK-uwI"/>
+                        <outlet property="percentTextField" destination="xcT-W6-l1b" id="FHC-9W-B8t"/>
                         <outlet property="testTableView" destination="OSX-LZ-j6A" id="2Tb-gy-Zxn"/>
                     </connections>
                 </viewController>

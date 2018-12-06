@@ -97,6 +97,7 @@ class TestViewController: UIViewController {
         }
         Test.overallAverage.append(thisTest.percent)
         theTestArray.append(thisTest)
+        saveData()
     }
     
     func recursion(_ N: Int) {
