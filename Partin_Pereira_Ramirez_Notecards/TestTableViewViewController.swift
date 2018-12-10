@@ -44,6 +44,9 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     @IBAction func greaterThanAction(_ sender: Any) {
+        if let safePercent = Double(percentTextField.text!) {
+            //searching(searchValue: safePercent, array: makePercentArray(testArray: theTestArray))
+        }
     }
     
     @IBAction func exactlyAction(_ sender: Any) {
@@ -52,4 +55,35 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     @IBAction func lessThanAction(_ sender: Any) {
     }
     
+    func searching (searchValue: Double, array: [Int]) -> Bool {
+        
+        var leftIndex = 0
+        var rightIndex = array.count - 1
+        
+        while leftIndex <= rightIndex {
+            
+            let middleIndex = (leftIndex + rightIndex) / 2
+            let middleValue = array[middleIndex]
+            
+            if middleValue == searchValue {
+                return true
+            }
+            if searchValue < middleValue {
+                rightIndex = middleIndex - 1
+            }
+            if searchValue > middleValue {
+                leftIndex = middleIndex + 1
+            }
+        }
+        return false
+    }
+    
+    func makePercentArray(testArray: [Test]) -> [Double] {
+        var percentArray: [Double] = []
+        
+        for index in 0..<testArray.count {
+            percentArray.append(testArray[index].percent)
+        }
+        return percentArray
+    }
 }
