@@ -70,6 +70,15 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
         titleTextField.resignFirstResponder()
         return true
     }
+    func textViewShouldReturn(_ textView: UITextView) -> Bool {
+        text1TextView.resignFirstResponder()
+        return true
+    }
+    func textViewShouldReturn2(_ textView: UITextView) -> Bool {
+        text2TextView.resignFirstResponder()
+        return true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         text2TextView.isHidden = true
         labelTwo.isHidden = true
