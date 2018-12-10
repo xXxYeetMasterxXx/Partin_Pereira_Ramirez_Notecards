@@ -55,7 +55,7 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     @IBAction func lessThanAction(_ sender: Any) {
     }
     
-    func searching (searchValue: Double, array: [Int]) -> Bool {
+    /*func searching (searchValue: Double, array: [Int]) -> Bool {
         
         var leftIndex = 0
         var rightIndex = array.count - 1
@@ -76,7 +76,7 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
             }
         }
         return false
-    }
+    }*/
     
     func makePercentArray(testArray: [Test]) -> [Double] {
         var percentArray: [Double] = []
