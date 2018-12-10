@@ -22,6 +22,14 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        var counter = 0
+        while theTestArray.count > counter {
+            if theSubjectArray[number].units[indexPath.row] == theTestArray[counter].testedUnit {
+                theTestArray.remove(at: counter)
+                counter -= 1
+            }
+            counter += 1
+        }
         theSubjectArray[number].units.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
         saveData()

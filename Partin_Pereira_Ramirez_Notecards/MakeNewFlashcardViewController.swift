@@ -2,7 +2,7 @@
 
 import UIKit
 
-class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     var numberForPicker = 0
     var flashcardMade = Flashcard(title: "", text1: "", text2: "", colour: .yellow, type: .note)
@@ -62,7 +62,21 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.titleTextField.delegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleTextField.resignFirstResponder()
+        return true
+    }
+    func textViewShouldReturn(_ textView: UITextView) -> Bool {
+        text1TextView.resignFirstResponder()
+        return true
+    }
+    func textViewShouldReturn2(_ textView: UITextView) -> Bool {
+        text2TextView.resignFirstResponder()
+        return true
     }
     
     override func viewWillAppear(_ animated: Bool) {

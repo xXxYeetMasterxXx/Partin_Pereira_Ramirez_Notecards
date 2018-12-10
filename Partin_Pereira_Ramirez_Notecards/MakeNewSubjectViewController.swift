@@ -2,7 +2,7 @@
 
 import UIKit
 
-class MakeNewSubjectViewController: UIViewController {
+class MakeNewSubjectViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var subjectLabel: UITextField!
     
@@ -16,5 +16,12 @@ class MakeNewSubjectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    self.subjectLabel.delegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        subjectLabel.resignFirstResponder()
+        return true
+    }
+
 }
