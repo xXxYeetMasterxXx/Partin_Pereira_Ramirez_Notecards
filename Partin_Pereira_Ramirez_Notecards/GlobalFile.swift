@@ -19,7 +19,7 @@ struct Unit: Equatable, Codable {
     var flashcards: [Flashcard]
     var personalBest: Double = 0
     static func == (lhs: Unit, rhs: Unit) -> Bool {
-        return lhs.title == rhs.title && lhs.personalBest == rhs.personalBest
+        return lhs.title == rhs.title //&& lhs.personalBest == rhs.personalBest
     }
 }
 
@@ -54,7 +54,7 @@ struct Test: Codable {
         return items - correct
     }
     func findPercent (items: Double, correct: Double) -> Double {
-        return round(10*(correct / items)*10)
+        return round(100*(correct/items)*100)/100
     }
     func findDefinitions (items: Int, questions: Int) -> Int {
         return items - questions
@@ -64,7 +64,7 @@ struct Test: Codable {
         for index in 0 ..< overallArray.count {
             overallPercent += overallArray[index]
         }
-        return round(10*(overallPercent / Double(overallArray.count)/10))
+        return round(100*(overallPercent/Double(overallArray.count)))/100
     }
 }
 
