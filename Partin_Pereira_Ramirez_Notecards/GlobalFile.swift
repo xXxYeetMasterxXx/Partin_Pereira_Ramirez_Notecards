@@ -107,6 +107,7 @@ func colourPicker(colour: Colour) -> UIColor {
 
 let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 let archiveURL = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist")
+let archiveURL2 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist2")
 
 func saveData() {
     let pListEncoder = PropertyListEncoder()
@@ -114,7 +115,7 @@ func saveData() {
     try? encodedItem?.write(to: archiveURL, options: .noFileProtection)
     
     let newEncodedItem = try? pListEncoder.encode(theTestArray)
-    try? newEncodedItem?.write(to: archiveURL, options: .noFileProtection)
+    try? newEncodedItem?.write(to: archiveURL2, options: .noFileProtection)
 }
 
 func loadData() {
@@ -123,7 +124,7 @@ func loadData() {
         pListDecoder.decode(Array<Subject>.self, from: retrivedItemsData) {
         theSubjectArray = decodedNotes
     }
-    if let retrivedItemsData = try? Data(contentsOf: archiveURL), let decodedNotes = try?
+    if let retrivedItemsData = try? Data(contentsOf: archiveURL2), let decodedNotes = try?
         pListDecoder.decode(Array<Test>.self, from: retrivedItemsData) {
         theTestArray = decodedNotes
     }
