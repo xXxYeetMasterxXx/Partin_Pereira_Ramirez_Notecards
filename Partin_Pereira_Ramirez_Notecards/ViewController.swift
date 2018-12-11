@@ -31,6 +31,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        var counter = 0
+        while theSubjectArray[indexPath.row].units.count > counter {
+            var counter2 = 0
+            while theTestArray.count > counter2 {
+                if theSubjectArray[indexPath.row].units[counter] == theTestArray[counter2].testedUnit {
+                    theTestArray.remove(at: counter2)
+                    Test.overallAverage.remove(at: counter2)
+                    counter2 -= 1
+                }
+                counter2 += 1
+            }
+            counter += 1
+        }
         theSubjectArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
         saveData()

@@ -14,10 +14,15 @@ struct Subject: Codable {
     var units: [Unit]
 }
 
-struct Unit: Equatable, Codable {
+class Unit: Equatable, Codable {
     var title: String
     var flashcards: [Flashcard]
     var personalBest: Double = 0
+    init (title: String, flashcards: [Flashcard], personalBest: Double) {
+        self.title = title
+        self.flashcards = flashcards
+        self.personalBest = personalBest
+    }
     static func == (lhs: Unit, rhs: Unit) -> Bool {
         return lhs.title == rhs.title //&& lhs.personalBest == rhs.personalBest
     }

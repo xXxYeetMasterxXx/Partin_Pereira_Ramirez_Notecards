@@ -8,13 +8,16 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var studySwitch: UISwitch!
     @IBOutlet weak var remindTextField: UITextField!
     @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var viewTests: UIButton!
     var remindTime = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         remindTextField.isHidden = true
         timePicker.isHidden = true
-        
+        if theTestArray.isEmpty {
+            viewTests.isHidden = true
+        }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
     }
     

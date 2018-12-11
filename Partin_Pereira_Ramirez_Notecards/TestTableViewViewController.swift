@@ -28,11 +28,7 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         number4 = indexPath.row
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ourTest = segue.destination as! TestOverviewViewController
-        ourTest.testToDisplay = theTestArray[number4]
-    }
+
     
     @IBAction func unwind4(_ sender: UIStoryboardSegue) {
         testTableView.reloadData()
