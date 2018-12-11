@@ -995,7 +995,7 @@
         <!--Test Overview-->
         <scene sceneID="ARQ-OZ-0lK">
             <objects>
-                <viewController id="JiT-WJ-06y" customClass="TestOverviewViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JiT-WJ-06y" customClass="TestOverviewViewController2" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJN-cA-JfF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1197,30 +1197,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LiB-yL-OMB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Test Overview" id="jZ5-yb-GeV">
-                        <barButtonItem key="leftBarButtonItem" id="0A9-hS-IOy"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="zCx-AL-irS">
-                            <connections>
-                                <segue destination="Fwu-DD-WTF" kind="unwind" unwindAction="unwind4:" id="Cgr-yT-Xzz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Test Overview" id="Oez-Cl-f0s"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="amountCorrectLabel" destination="REn-9w-Ysk" id="jlj-lh-IEB"/>
-                        <outlet property="amountIncorrectLabel" destination="CSG-LS-wCb" id="04A-ig-o1t"/>
-                        <outlet property="amountOfDefinitionsLabel" destination="jYd-zG-Qmh" id="q3K-iI-zkB"/>
-                        <outlet property="amountOfItemsLabel" destination="83P-C5-Ksf" id="JaE-2z-vCi"/>
-                        <outlet property="amountOfQuestionsLabel" destination="g8H-zH-gc9" id="0uo-Ff-EEK"/>
-                        <outlet property="overallAverageLabel" destination="95v-d7-DAH" id="EDA-Fo-4ly"/>
-                        <outlet property="percentLabel" destination="aV1-VK-BoY" id="VT1-xb-hyj"/>
-                        <outlet property="personalBestLabel" destination="o8j-NT-dr9" id="sEo-zi-zT6"/>
-                        <outlet property="stickerImage" destination="f7d-lR-qDo" id="jNH-Uj-1Sy"/>
-                        <outlet property="unitTitleLabel" destination="1uN-kL-WX0" id="swt-GD-IXg"/>
+                        <outlet property="amountOfCorrectLabel" destination="REn-9w-Ysk" id="Nc2-9m-eHP"/>
+                        <outlet property="amountOfDefinitionsLabel" destination="jYd-zG-Qmh" id="6Tv-q3-7OO"/>
+                        <outlet property="amountOfIncorrectLabel" destination="CSG-LS-wCb" id="Clh-6d-RFd"/>
+                        <outlet property="amountOfItemsLabel" destination="83P-C5-Ksf" id="6uQ-A8-eRa"/>
+                        <outlet property="amountOfQuestionsLabel" destination="g8H-zH-gc9" id="5YT-6x-3ai"/>
+                        <outlet property="overallAverageLabel" destination="95v-d7-DAH" id="ten-zR-ZCm"/>
+                        <outlet property="percentLabel" destination="aV1-VK-BoY" id="mfE-CV-mfJ"/>
+                        <outlet property="personalBestLabel" destination="o8j-NT-dr9" id="281-rf-ckk"/>
+                        <outlet property="stickerImage" destination="f7d-lR-qDo" id="BY0-Wn-Iox"/>
+                        <outlet property="unitTitleLabel" destination="1uN-kL-WX0" id="u5R-Tv-F5W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqp-b3-zRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Fwu-DD-WTF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2652" y="-723"/>
         </scene>

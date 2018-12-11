@@ -26,6 +26,7 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         while theTestArray.count > counter {
             if theSubjectArray[number].units[indexPath.row] == theTestArray[counter].testedUnit {
                 theTestArray.remove(at: counter)
+                Test.overallAverage.remove(at: counter)
                 counter -= 1
             }
             counter += 1

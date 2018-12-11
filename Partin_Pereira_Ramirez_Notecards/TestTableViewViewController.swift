@@ -9,7 +9,6 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var lessThanButton: UIButton!
     @IBOutlet weak var percentTextField: UITextField!
     @IBOutlet weak var testTableView: UITableView!
-    var number4 = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return theTestArray.count
@@ -24,15 +23,8 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         number4 = indexPath.row
-        print(number4)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ourTest = segue.destination as! TestOverviewViewController
-        ourTest.testToDisplay = theTestArray[number4]
-        print(ourTest.testToDisplay)
-        print(number4)
-    }
+
     
     @IBAction func unwind4(_ sender: UIStoryboardSegue) {
         testTableView.reloadData()
