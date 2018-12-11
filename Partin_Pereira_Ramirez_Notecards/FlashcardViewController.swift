@@ -36,6 +36,7 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         theSubjectArray[number].units[number2].flashcards.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
+        enabled()
         saveData()
     }
     
@@ -43,22 +44,40 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
         if let sender3 = sender.source as? MakeNewFlashcardViewController {
             theSubjectArray[number].units[number2].flashcards.append(sender3.flashcardMade)
         }
+        enabled()
         saveData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        enabled()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         flashcardsTableView.reloadData()
-        if theSubjectArray[number].units[number2].flashcards.isEmpty {
+        
+    }
+    
+    func enabled () {
+        if theSubjectArray[number].units[number2].flashcards.isEmpty == true {
             flashVCBrowseButton.isEnabled = false
             flashTestYourselfButton.isEnabled = false
+        } else if findNotes(checkingFlashcards: theSubjectArray[number].units[number2].flashcards) {
+            flashTestYourselfButton.isEnabled = false
+            flashVCBrowseButton.isEnabled = true
         } else {
             flashVCBrowseButton.isEnabled = true
             flashTestYourselfButton.isEnabled = true
         }
+    }
+    
+    func findNotes (checkingFlashcards: [Flashcard]) -> Bool {
+        for index in 0 ..< checkingFlashcards.count {
+            guard checkingFlashcards[index].type == .note else {
+                return false
+            }
+        }
+        return true
     }
     
 }

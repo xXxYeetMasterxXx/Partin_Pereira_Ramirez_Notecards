@@ -24,7 +24,7 @@ class Unit: Equatable, Codable {
         self.personalBest = personalBest
     }
     static func == (lhs: Unit, rhs: Unit) -> Bool {
-        return lhs.title == rhs.title //&& lhs.personalBest == rhs.personalBest
+        return lhs.title == rhs.title && lhs.personalBest == rhs.personalBest
     }
 }
 
