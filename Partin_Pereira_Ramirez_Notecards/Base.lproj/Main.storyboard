@@ -69,6 +69,7 @@
                         <outlet property="remindTextField" destination="cwf-Id-DB9" id="oXe-02-FiK"/>
                         <outlet property="studySwitch" destination="701-m8-jDF" id="Pvb-37-uvP"/>
                         <outlet property="timePicker" destination="eZG-rX-6bR" id="yp6-mB-HOM"/>
+                        <outlet property="viewTests" destination="190-z4-grp" id="qXJ-JW-19k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNk-SO-s4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -949,6 +950,7 @@
                         <viewLayoutGuide key="safeArea" id="EzV-2E-D66"/>
                     </view>
                     <navigationItem key="navigationItem" title="Test Overview" id="2iv-I3-3qK">
+                        <barButtonItem key="leftBarButtonItem" id="Hxg-z1-QZ4"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ISF-qa-tbJ">
                             <connections>
                                 <segue destination="jdk-pQ-2PF" kind="unwind" unwindAction="unwind3:" id="KT3-xH-CDE"/>
