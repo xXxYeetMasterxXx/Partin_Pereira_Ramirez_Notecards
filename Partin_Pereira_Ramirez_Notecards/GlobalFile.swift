@@ -42,7 +42,11 @@ struct Flashcard: SetNoteType, Codable {
     }
 }
 
-struct Test: Codable {
+struct Test: Codable, Comparable {
+    static func < (lhs: Test, rhs: Test) -> Bool {
+        return lhs.percent < rhs.percent
+    }
+    
     var title: String
     var amount: Int
     var correct: Int
