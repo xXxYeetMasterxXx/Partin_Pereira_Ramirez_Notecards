@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="muf-kv-VIx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="muf-kv-VIx">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -573,6 +573,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNh-Bp-h7U">
+                                <rect key="frame" x="0.0" y="64" width="414" height="934"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2u-T1-opl">
                                 <rect key="frame" x="145" y="629" width="125" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -607,44 +611,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLF-ur-dhC">
-                                <rect key="frame" x="-20" y="360" width="454" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Iox-ZY-tod">
-                                        <rect key="frame" x="20" y="20" width="414" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="h2u-Ci-jCP" id="rcp-Uv-gx3"/>
-                                        </connections>
-                                    </textView>
-                                </subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oQf-Kc-gow">
+                                <rect key="frame" x="0.0" y="521" width="414" height="100"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
-                                    <outlet property="delegate" destination="h2u-Ci-jCP" id="edL-zm-eyI"/>
+                                    <outlet property="delegate" destination="h2u-Ci-jCP" id="Zfh-KL-Sm9"/>
                                 </connections>
-                            </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoQ-7x-X6D">
-                                <rect key="frame" x="-20" y="501" width="454" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oQf-Kc-gow">
-                                        <rect key="frame" x="20" y="20" width="414" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="h2u-Ci-jCP" id="Zfh-KL-Sm9"/>
-                                        </connections>
-                                    </textView>
-                                </subviews>
-                                <connections>
-                                    <outlet property="delegate" destination="h2u-Ci-jCP" id="KNt-F1-FFS"/>
-                                </connections>
-                            </scrollView>
+                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Note:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-xH-bIL">
                                 <rect key="frame" x="11" y="351" width="186" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -659,8 +634,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Iox-ZY-tod">
+                                <rect key="frame" x="0.0" y="389" width="414" height="100"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="h2u-Ci-jCP" id="rcp-Uv-gx3"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="89E-kc-GND" firstAttribute="bottom" secondItem="Iox-ZY-tod" secondAttribute="bottom" constant="247" id="1iA-Ne-zGw"/>
+                            <constraint firstItem="oQf-Kc-gow" firstAttribute="leading" secondItem="89E-kc-GND" secondAttribute="leading" id="8Kp-SM-BEh"/>
+                            <constraint firstItem="89E-kc-GND" firstAttribute="bottom" secondItem="oQf-Kc-gow" secondAttribute="bottom" constant="115" id="LfJ-WB-AgL"/>
+                            <constraint firstItem="oQf-Kc-gow" firstAttribute="trailing" secondItem="89E-kc-GND" secondAttribute="trailing" id="aZK-nC-d2i"/>
+                            <constraint firstItem="Iox-ZY-tod" firstAttribute="trailing" secondItem="89E-kc-GND" secondAttribute="trailing" id="bAd-ah-nSS"/>
+                            <constraint firstItem="Iox-ZY-tod" firstAttribute="leading" secondItem="89E-kc-GND" secondAttribute="leading" id="ccr-ZP-Dhn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="89E-kc-GND"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Flashcard" id="VIa-kA-qYY">
@@ -675,8 +667,7 @@
                         <outlet property="labelOne" destination="Zge-xH-bIL" id="f6Y-Xy-uP7"/>
                         <outlet property="labelTwo" destination="w88-8g-zEX" id="i8Z-SH-Rlx"/>
                         <outlet property="picker" destination="uyH-br-SLF" id="O6y-vJ-Dmp"/>
-                        <outlet property="scroll2" destination="EoQ-7x-X6D" id="EKH-CH-P2V"/>
-                        <outlet property="scrollView" destination="TLF-ur-dhC" id="qZ0-dE-Qbc"/>
+                        <outlet property="scrollView" destination="RNh-Bp-h7U" id="jNz-PQ-Dzr"/>
                         <outlet property="text1TextView" destination="Iox-ZY-tod" id="Vc9-ss-xrT"/>
                         <outlet property="text2TextView" destination="oQf-Kc-gow" id="h73-hB-usT"/>
                         <outlet property="titleTextField" destination="QTg-X8-nLD" id="oRm-vy-g1u"/>

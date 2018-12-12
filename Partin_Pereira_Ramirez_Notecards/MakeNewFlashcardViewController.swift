@@ -17,18 +17,40 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var labelTwo: UILabel!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var scroll2: UIScrollView!
-    
-     func textViewDidBeginEditing(_ textField: UITextField) {
-scroll2.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWasShown(_:)),
+                                               name: NSNotification.Name(rawValue: ".UIResponder.keyboardDidShowNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWillBeHidden(_:)),
+                                               name: NSNotification.Name(rawValue: ".UIResponder.keyboardWillHideNotification"), object: nil)
         
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        scroll2.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    @objc func keyboardWasShown(_ notificiation: NSNotification) {
+        guard let info = notificiation.userInfo,
+            let keyboardFrameValue =
+            info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue
+            else { return }
+        
+        let keyboardFrame = keyboardFrameValue.cgRectValue
+        let keyboardSize = keyboardFrame.size
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0,
+                                         bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
+    @objc func keyboardWillBeHidden(_ notification:
+        NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    
     
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -75,6 +97,7 @@ scroll2.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
         super.viewDidLoad()
         self.titleTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    registerForKeyboardNotifications()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
