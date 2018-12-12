@@ -2,7 +2,7 @@
 
 import UIKit
 
-class TestTableViewViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TestTableViewViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var greaterThanButton: UIButton!
     @IBOutlet weak var exactlyButton: UIButton!
