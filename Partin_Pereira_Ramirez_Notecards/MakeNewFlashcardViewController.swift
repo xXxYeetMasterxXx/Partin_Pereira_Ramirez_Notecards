@@ -20,35 +20,6 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector:
-            #selector(keyboardWasShown(_:)),
-                                               name: NSNotification.Name(rawValue: ".UIResponder.keyboardDidShowNotification"), object: nil)
-        NotificationCenter.default.addObserver(self, selector:
-            #selector(keyboardWillBeHidden(_:)),
-                                               name: NSNotification.Name(rawValue: ".UIResponder.keyboardWillHideNotification"), object: nil)
-        
-    }
-    
-    @objc func keyboardWasShown(_ notificiation: NSNotification) {
-        guard let info = notificiation.userInfo,
-            let keyboardFrameValue =
-            info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue
-            else { return }
-        
-        let keyboardFrame = keyboardFrameValue.cgRectValue
-        let keyboardSize = keyboardFrame.size
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0,
-                                         bottom: keyboardSize.height, right: 0.0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-    }
-    @objc func keyboardWillBeHidden(_ notification:
-        NSNotification) {
-        let contentInsets = UIEdgeInsets.zero
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-    }
     
     
     
@@ -97,7 +68,22 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
         super.viewDidLoad()
         self.titleTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
-    registerForKeyboardNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
