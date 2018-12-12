@@ -51,13 +51,16 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBAction func exactlyAction(_ sender: Any) {
         if isSearched {
+            exactlyButton.backgroundColor = #colorLiteral(red: 0.921471417, green: 0.9216262698, blue: 0.9214497209, alpha: 1)
             theTestArray = testArrayBackup
             testTableView.reloadData()
             isSearched = false
         } else {
+            exactlyButton.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            isSearched = true
             if let safePercent = Double(percentTextField.text!) {
                 print("here")
-                if searching(searchValue: safePercent, array: makePercentArray(testArray: theTestArray)) {
+                if searching(searchValue: safePercent, array: makePercentArray(testArray: theTestArray), type: 2) {
                     print("nice")
                 }
             }
@@ -67,48 +70,29 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     @IBAction func lessThanAction(_ sender: Any) {
     }
     
-    func searching (searchValue: Double, array: [Double]) -> Bool {
+    func searching (searchValue: Double, array: [Double], type: Int) -> Bool {
         
-        var leftIndex = 0
-        var rightIndex = array.count - 1
+        var newTestArray: [Int] = []
         
-        while leftIndex <= rightIndex {
-            
-            let middleIndex = (leftIndex + rightIndex) / 2
-            let middleValue = array[middleIndex]
-            
-            if middleValue == searchValue {
-                theTestArray = [theTestArray[middleIndex]]
-                testTableView.reloadData()
-                print("yes")
-                isSearched = true
-                
-                var lowerIndex = middleIndex
-                while array[lowerIndex - 1] == searchValue {
-                    lowerIndex -= 1
-                    theTestArray.append(testArrayBackup[lowerIndex])
-                }
-                
-                var higherIndex = middleIndex
-                while array[higherIndex + 1] == searchValue {
-                    higherIndex -= 1
-                    theTestArray.append(testArrayBackup[higherIndex])
-                }
-                return true
+        for index in 0..<array.count {
+            if array[index] == searchValue {
+                newTestArray.append(index)
             }
-            if searchValue < middleValue {
-                rightIndex = middleIndex - 1
+        }
+        if newTestArray != [] {
+            theTestArray = []
+            for index in 0..<newTestArray.count {
+                theTestArray.append(testArrayBackup[newTestArray[index]])
             }
-            if searchValue > middleValue {
-                leftIndex = middleIndex + 1
-            }
+            testTableView.reloadData()
+            return true
         }
         return false
     }
     
     func makePercentArray(testArray: [Test]) -> [Double] {
         var percentArray: [Double] = []
-        theTestArray = theTestArray.sorted(by: <)
+        //theTestArray = theTestArray.sorted(by: <)
         for index in 0..<testArray.count {
             percentArray.append(theTestArray[index].percent)
         }
