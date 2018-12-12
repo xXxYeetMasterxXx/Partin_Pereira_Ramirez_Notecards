@@ -63,7 +63,7 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
         compare(button: lessThanButton, button2: greaterThanButton, button3: exactlyButton, type: 3)
     }
     
-    func searching (searchValue: Double, array: [Double], type: Int) -> Bool {
+    func searching (searchValue: Double, array: [Double], type: Int) {
         var newTestArray: [Int] = []
         switch type {
         case 1:
@@ -87,15 +87,12 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
         default:
             print("f")
         }
-        if newTestArray != [] {
-            theTestArray = []
-            for index in 0..<newTestArray.count {
-                theTestArray.append(testArrayBackup[newTestArray[index]])
-            }
-            testTableView.reloadData()
-            return true
+        
+        theTestArray = []
+        for index in 0..<newTestArray.count {
+            theTestArray.append(testArrayBackup[newTestArray[index]])
         }
-        return false
+        testTableView.reloadData()
     }
     
     func makePercentArray(testArray: [Test]) -> [Double] {
@@ -120,10 +117,9 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
             button2.isEnabled = false
             button3.isEnabled = false
             isSearched = true
-            if let safePercent = Double(percentTextField.text!) {
-                if searching(searchValue: safePercent, array: makePercentArray(testArray: theTestArray), type: type) {
-                }
-            }
+            
+            guard let safePercent = Double(percentTextField.text!) else {return}
+            searching(searchValue: safePercent, array: makePercentArray(testArray: theTestArray), type: type)
         }
     }
     
