@@ -42,8 +42,11 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func answerButtonAction(_ sender: Any) {
+        var check = ""
         if testArrayOfFlashcards[spotInArray].type == .definiton {
-            if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text1.lowercased() {
+            check = testArrayOfFlashcards[spotInArray].text1.lowercased()
+            check.removeLast()
+            if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text1.lowercased() || answerTextField.text?.lowercased() == check {
                 correct += 1
                 outcomeLabel.text = "Correct"
                 outcomeLabel.textColor = #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)
@@ -54,7 +57,9 @@ class TestViewController: UIViewController {
                 outcomeLabel.isHidden = false
             }
         } else {
-            if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text2.lowercased() {
+            check = testArrayOfFlashcards[spotInArray].text2.lowercased()
+            check.removeLast()
+            if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text2.lowercased() || answerTextField.text?.lowercased() == check {
                 correct += 1
                 outcomeLabel.text = "Correct"
                 outcomeLabel.textColor = #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)
