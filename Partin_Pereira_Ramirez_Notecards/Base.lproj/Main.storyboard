@@ -123,13 +123,6 @@
                                     <outlet property="delegate" destination="wDo-8P-rq7" id="8Dq-1n-RTB"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcT-W6-l1b">
-                                <rect key="frame" x="316" y="64" width="98" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95d-9e-wru">
                                 <rect key="frame" x="0.0" y="64" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -160,6 +153,13 @@
                                     <action selector="lessThanAction:" destination="wDo-8P-rq7" eventType="touchUpInside" id="in8-Rf-KqC"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcT-W6-l1b">
+                                <rect key="frame" x="316" y="64" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Jbh-dR-LXg"/>
@@ -415,10 +415,21 @@
                                     <action selector="browseVContAction:" destination="BCC-jm-2kd" eventType="touchUpInside" id="Wzl-V9-cof"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64I-Qm-jhf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="64I-Qm-jhf" firstAttribute="top" secondItem="1b8-aW-w4u" secondAttribute="top" id="3T9-cY-EfG"/>
+                            <constraint firstItem="Wsn-X5-dPP" firstAttribute="top" secondItem="64I-Qm-jhf" secondAttribute="bottom" id="49p-zK-wEy"/>
                             <constraint firstItem="Wsn-X5-dPP" firstAttribute="top" secondItem="xSP-Fb-RkM" secondAttribute="top" id="IqV-S1-ZQn"/>
+                            <constraint firstAttribute="trailing" secondItem="64I-Qm-jhf" secondAttribute="trailing" id="UH1-C0-Frt"/>
+                            <constraint firstItem="64I-Qm-jhf" firstAttribute="leading" secondItem="1b8-aW-w4u" secondAttribute="leading" id="gwP-Lo-NfZ"/>
                             <constraint firstItem="Wsn-X5-dPP" firstAttribute="bottom" secondItem="xSP-Fb-RkM" secondAttribute="bottom" id="h5M-58-Uud"/>
                             <constraint firstItem="Wsn-X5-dPP" firstAttribute="leading" secondItem="xSP-Fb-RkM" secondAttribute="leading" id="kBf-NN-4j6"/>
                             <constraint firstItem="Wsn-X5-dPP" firstAttribute="trailing" secondItem="xSP-Fb-RkM" secondAttribute="trailing" id="u3j-hm-nOP"/>

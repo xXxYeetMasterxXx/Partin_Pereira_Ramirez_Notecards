@@ -56,8 +56,6 @@ class SettingsViewController: UIViewController {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: true)
         let request = UNNotificationRequest(identifier: "studyTime", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        print(seconds)
-        print("me too thanjs")
     }
     
     func cancel() {
