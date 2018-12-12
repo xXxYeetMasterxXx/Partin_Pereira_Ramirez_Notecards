@@ -2,7 +2,7 @@
 
 import UIKit
 
-class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     var numberForPicker = 0
     var flashcardMade = Flashcard(title: "", text1: "", text2: "", colour: .yellow, type: .note)
@@ -17,9 +17,20 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var labelTwo: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var scroll2: UIScrollView!
     
+     func textViewDidBeginEditing(_ textField: UITextField) {
+scroll2.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+        
+    }
     
+    func textViewDidEndEditing(_ textView: UITextView) {
+        scroll2.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

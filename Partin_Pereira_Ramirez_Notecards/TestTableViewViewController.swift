@@ -11,7 +11,7 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var testTableView: UITableView!
     
     var testArrayBackup: [Test] = []
-    var sortedTests: [Test] = []
+    //var sortedTests: [Test] = []
     var isSearched = false
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,29 +41,27 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewWillAppear(_ animated: Bool) {
         testTableView.reloadData()
-        sortedTests = theTestArray.sorted(by: <)
         isSearched = false
-        testArrayBackup = sortedTests
-        sortedTests = testArrayBackup
+        testArrayBackup = theTestArray
+        theTestArray = testArrayBackup
     }
     
     @IBAction func greaterThanAction(_ sender: Any) {
+    }
+    
+    @IBAction func exactlyAction(_ sender: Any) {
         if isSearched {
-            sortedTests = testArrayBackup
+            theTestArray = testArrayBackup
             testTableView.reloadData()
             isSearched = false
         } else {
             if let safePercent = Double(percentTextField.text!) {
                 print("here")
-                if searching(searchValue: safePercent, array: makePercentArray(testArray: sortedTests)) {
+                if searching(searchValue: safePercent, array: makePercentArray(testArray: theTestArray)) {
                     print("nice")
                 }
             }
         }
-        
-    }
-    
-    @IBAction func exactlyAction(_ sender: Any) {
     }
     
     @IBAction func lessThanAction(_ sender: Any) {
@@ -80,11 +78,22 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
             let middleValue = array[middleIndex]
             
             if middleValue == searchValue {
-                testArrayBackup = sortedTests
-                sortedTests = [sortedTests[middleIndex]]
+                theTestArray = [theTestArray[middleIndex]]
                 testTableView.reloadData()
                 print("yes")
                 isSearched = true
+                
+                var lowerIndex = middleIndex
+                while array[lowerIndex - 1] == searchValue {
+                    lowerIndex -= 1
+                    theTestArray.append(testArrayBackup[lowerIndex])
+                }
+                
+                var higherIndex = middleIndex
+                while array[higherIndex + 1] == searchValue {
+                    higherIndex -= 1
+                    theTestArray.append(testArrayBackup[higherIndex])
+                }
                 return true
             }
             if searchValue < middleValue {
@@ -99,10 +108,11 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     
     func makePercentArray(testArray: [Test]) -> [Double] {
         var percentArray: [Double] = []
-        
+        theTestArray = theTestArray.sorted(by: <)
         for index in 0..<testArray.count {
-            percentArray.append(sortedTests[index].percent)
+            percentArray.append(theTestArray[index].percent)
         }
+        print(percentArray)
         return percentArray
     }
 }
