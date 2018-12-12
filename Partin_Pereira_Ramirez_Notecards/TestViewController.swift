@@ -16,6 +16,7 @@ class TestViewController: UIViewController {
     var correct = 0
     var question = 0
     var spotInArray = 0
+    var check = ""
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ourTest = segue.destination as! TestOverviewViewController
@@ -42,10 +43,11 @@ class TestViewController: UIViewController {
     }
     
     @IBAction func answerButtonAction(_ sender: Any) {
-        var check = ""
         if testArrayOfFlashcards[spotInArray].type == .definiton {
             check = testArrayOfFlashcards[spotInArray].text1.lowercased()
-            check.removeLast()
+            if check.count > 1 {
+                check.removeLast()
+            }
             if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text1.lowercased() || answerTextField.text?.lowercased() == check {
                 correct += 1
                 outcomeLabel.text = "Correct"
@@ -58,7 +60,9 @@ class TestViewController: UIViewController {
             }
         } else {
             check = testArrayOfFlashcards[spotInArray].text2.lowercased()
-            check.removeLast()
+            if check.count > 1 {
+                check.removeLast()
+            }
             if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text2.lowercased() || answerTextField.text?.lowercased() == check {
                 correct += 1
                 outcomeLabel.text = "Correct"
@@ -91,7 +95,12 @@ class TestViewController: UIViewController {
         if testArrayOfFlashcards[spotInArray].type == .definiton {
             questionLabel.text = "What is \(testArrayOfFlashcards[spotInArray].text2) the definiton for?"
         } else {
-            questionLabel.text = "\(testArrayOfFlashcards[spotInArray].text1)?"
+            check = testArrayOfFlashcards[spotInArray].text1
+            if check.hasSuffix("?") {
+                questionLabel.text = testArrayOfFlashcards[spotInArray].text1
+            } else {
+                questionLabel.text = "\(testArrayOfFlashcards[spotInArray].text1)?"
+            }
         }
     }
     
