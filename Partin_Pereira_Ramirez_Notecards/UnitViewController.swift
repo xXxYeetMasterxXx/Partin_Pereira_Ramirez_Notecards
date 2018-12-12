@@ -24,12 +24,9 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         var counter = 0
         while theTestArray.count > counter {
-            print("\(theTestArray.count) test array number")
             if theSubjectArray[number].units[indexPath.row] == theTestArray[counter].testedUnit {
-                print ("\(counter) counter")
                 theTestArray.remove(at: counter)
                 Test.overallAverage.remove(at: counter)
-                print ("\(counter) counter")
                 counter -= 1
             }
             counter += 1
