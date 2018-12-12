@@ -5,26 +5,14 @@ import UIKit
 class BrowseViewController: UIViewController {
 
     @IBOutlet weak var BrowseVContButton: UIButton!
-    
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     var browsedFlipped = false
-    
     var counter: Int = 0
     var counter2: Int = 0
     var flashcardsArray: [Flashcard] = []
     
-    @IBAction func nextButton(_ sender: Any) {
-        
-        if (flashcardsArray.count - 1) >= (counter + 1) {
-            counter += 1
-            BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
-            browsedFlipped = false
-        }
-        if flashcardsArray[counter].type == .note {
-            BrowseVContButton.isEnabled = false
-            browsedFlipped = false
-        } else {
-            BrowseVContButton.isEnabled = true
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,14 +22,32 @@ class BrowseViewController: UIViewController {
         BrowseVContButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
         flashcardsArray.shuffle()
         BrowseVContButton.setTitle(flashcardsArray[number3].text1, for: .normal)
-        
         if flashcardsArray[number3].type == .note {
             BrowseVContButton.isEnabled = false
+        }
+        if flashcardsArray.count == 1 {
+            nextButton.isEnabled = false
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         UIDevice.current.setValue(UIDeviceOrientation.portrait.rawValue, forKey: "orientation")
+    }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        if (flashcardsArray.count - 1) >= (counter + 1) {
+            counter += 1
+            BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
+            browsedFlipped = false
+        } else {
+            nextButton.isEnabled = false
+        }
+        if flashcardsArray[counter].type == .note {
+            BrowseVContButton.isEnabled = false
+            browsedFlipped = false
+        } else {
+            BrowseVContButton.isEnabled = true
+        }
     }
     
     @IBAction func browseVContAction(_ sender: Any) {
@@ -54,12 +60,6 @@ class BrowseViewController: UIViewController {
             UIView.transition(with: BrowseVContButton, duration: 0.5, options: .transitionFlipFromBottom, animations: nil, completion: nil)
             browsedFlipped = false
         }
-    
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
     }
 
 }

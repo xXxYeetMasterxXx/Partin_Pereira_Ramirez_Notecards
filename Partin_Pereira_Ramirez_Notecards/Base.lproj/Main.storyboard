@@ -434,6 +434,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="BrowseVContButton" destination="Wsn-X5-dPP" id="GY5-az-yyM"/>
+                        <outlet property="nextButton" destination="c5T-uF-GTo" id="Pzd-Wn-PBQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fe0-1d-z2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
