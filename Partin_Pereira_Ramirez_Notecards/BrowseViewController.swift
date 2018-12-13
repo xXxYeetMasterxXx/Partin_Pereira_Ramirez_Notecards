@@ -22,7 +22,6 @@ class BrowseViewController: UIViewController {
         BrowseVContButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
         flashcardsArray.shuffle()
         BrowseVContButton.setTitle(flashcardsArray[number3].text1, for: .normal)
-        
         if flashcardsArray[number3].type == .note {
             BrowseVContButton.isEnabled = false
         }
@@ -39,7 +38,7 @@ class BrowseViewController: UIViewController {
         if (flashcardsArray.count - 1) >= (counter + 1) {
             counter += 1
             BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
-            //BrowseVContButton.backgroundColor
+            BrowseVContButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[counter].colour)
             browsedFlipped = false
         } else {
             nextButton.isEnabled = false

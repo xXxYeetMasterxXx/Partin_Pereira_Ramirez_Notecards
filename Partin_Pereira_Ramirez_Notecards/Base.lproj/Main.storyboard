@@ -514,7 +514,7 @@
                                             <segue destination="Vcx-HI-HtS" kind="show" id="hSF-O0-iyl"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="182.66666666666666" id="c9Q-Fg-ddr"/>
+                                    <barButtonItem title="          " width="193.66666666666666" id="c9Q-Fg-ddr"/>
                                     <barButtonItem title="Browse" id="goh-Ah-GNv">
                                         <connections>
                                             <segue destination="BCC-jm-2kd" kind="show" id="7hi-sL-jmX"/>
@@ -1139,7 +1139,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccn-9R-mgh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jdk-pQ-2PF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4230.434782608696" y="1010.054347826087"/>
+            <point key="canvasLocation" x="4229" y="1010"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yzr-C1-jYb">
@@ -1386,19 +1386,22 @@
         <!--Edit Flashcard-->
         <scene sceneID="CdZ-Za-uNo">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="xyj-Q8-x05" customClass="MakeNewFlashcardViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="xyj-Q8-x05" customClass="EditFlashcardViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6xs-j4-aXH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tE-ik-bHd">
-                                <rect key="frame" x="145" y="629" width="125" height="100"/>
+                                <rect key="frame" x="145" y="582" width="125" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Select Colour">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="colourButtonPressed:" destination="xyj-Q8-x05" eventType="touchUpInside" id="ygx-aE-Ple"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Flashcard Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="my8-1c-N9M">
                                 <rect key="frame" x="20" y="101" width="374" height="30"/>
@@ -1407,49 +1410,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PVQ-bt-ojC">
-                                <rect key="frame" x="0.0" y="156" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="xyj-Q8-x05" id="nVL-VI-yqk"/>
-                                    <outlet property="delegate" destination="xyj-Q8-x05" id="hwl-69-o9h"/>
-                                </connections>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkP-Mj-9r3">
-                                <rect key="frame" x="20" y="156" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G40-Wu-raC">
-                                <rect key="frame" x="0.0" y="521" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="414" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Note:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uke-6E-8Fw">
-                                <rect key="frame" x="11" y="351" width="186" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Changing Label 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAd-uy-sgj">
-                                <rect key="frame" x="11" y="492" width="134" height="21"/>
+                                <rect key="frame" x="11" y="385" width="134" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qQJ-F6-9oW">
-                                <rect key="frame" x="0.0" y="380" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="229" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Note:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uke-6E-8Fw">
+                                <rect key="frame" x="11" y="200" width="186" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zpB-rf-FXB"/>
@@ -1461,6 +1449,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="colourButton" destination="8tE-ik-bHd" id="FXc-mp-2Qr"/>
+                        <outlet property="labelOne" destination="uke-6E-8Fw" id="17f-yg-5H9"/>
+                        <outlet property="labelTwo" destination="yAd-uy-sgj" id="vS0-Eh-uZR"/>
+                        <outlet property="text1TextView" destination="qQJ-F6-9oW" id="igm-ho-Lii"/>
+                        <outlet property="text2TextView" destination="G40-Wu-raC" id="7hD-c8-hZN"/>
+                        <outlet property="titleTextField" destination="my8-1c-N9M" id="Fmb-Q2-1dh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEK-Tv-U2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="lBH-Lu-rnX" userLabel="Exit" sceneMemberID="exit"/>
