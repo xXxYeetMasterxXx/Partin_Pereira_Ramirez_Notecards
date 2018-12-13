@@ -16,13 +16,15 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         remindTextField.isHidden = true
+        repeatsLabel.isHidden = true
+        repeatsSwitch.isHidden = true
         timePicker.isHidden = true
+        
         if theTestArray.isEmpty {
             viewTests.isHidden = true
-            
         }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
-    self.remindTextField.delegate = self
+        self.remindTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
@@ -47,25 +49,28 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             timePicker.isHidden = false
         } else {
             remindTextField.isHidden = true
+            repeatsLabel.isHidden = true
+            repeatsSwitch.isHidden = true
             timePicker.isHidden = true
         }
     }
     
     func getMinutes() {
         remindTime = timePicker.date
+        let repeats = repeatsSwitch.isOn
         let components = Calendar.current.dateComponents([.hour, .minute], from: remindTime)
         guard let hour = components.hour else {return}
         guard let minute = components.minute else {return}
         let minutes = Double((60 * hour) + minute)
-        notifications(seconds: (60 * minutes))
+        notifications(seconds: (60 * minutes), repeats: repeats)
     }
     
-    func notifications(seconds: Double) {
+    func notifications(seconds: Double, repeats: Bool) {
         let content = UNMutableNotificationContent()
         guard let safeText = remindTextField.text else {return}
         content.title = safeText
         content.badge = 1
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: repeats)
         let request = UNNotificationRequest(identifier: "studyTime", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
