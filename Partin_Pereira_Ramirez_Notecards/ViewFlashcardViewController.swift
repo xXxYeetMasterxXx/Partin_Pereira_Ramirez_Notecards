@@ -14,6 +14,7 @@ class ViewFlashcardViewController: UIViewController {
         saveData()
     }
     
+    //displays the chosen flashcard and makes it landscape
     override func viewWillAppear(_ animated: Bool) {
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
         flashcardButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
@@ -22,11 +23,13 @@ class ViewFlashcardViewController: UIViewController {
             flashcardButton.isEnabled = false
         }
     }
-
+    
+    //makes the device portrait when the user leaves this view
     override func viewWillDisappear(_ animated: Bool) {
         UIDevice.current.setValue(UIDeviceOrientation.portrait.rawValue, forKey: "orientation")
     }
     
+    //flips the flahscard with a cool animation
     @IBAction func flashcardButtonAction(_ sender: Any) {
         if flipped == false {
             flashcardButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text2, for: .normal)
