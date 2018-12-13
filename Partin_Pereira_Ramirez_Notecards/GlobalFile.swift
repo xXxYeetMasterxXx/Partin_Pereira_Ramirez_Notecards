@@ -37,7 +37,7 @@ struct Flashcard: SetNoteType, Codable {
     mutating func beAType (notePicked: String) -> NoteType {
         var type: NoteType
         if notePicked == "Definition" {
-            type = .definiton
+            type = .definition
         } else if notePicked == "Question" {
             type = .question
         } else {
@@ -78,7 +78,7 @@ struct Test: Codable, Comparable {
 }
 
 enum NoteType: Int, Codable {
-    case definiton
+    case definition
     case question
     case note
 }

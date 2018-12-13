@@ -43,15 +43,15 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         recursion(theSubjectArray[number].units[number2].flashcards.count - 1)
         testArrayOfFlashcards.shuffle()
         titleLabel.text = testArrayOfFlashcards[spotInArray].title
-        if testArrayOfFlashcards[spotInArray].type == .definiton {
-            questionLabel.text = "What is \(testArrayOfFlashcards[spotInArray].text2) the definiton for?"
+        if testArrayOfFlashcards[spotInArray].type == .definition {
+            questionLabel.text = "What is \(testArrayOfFlashcards[spotInArray].text2) the definition for?"
         } else {
             questionLabel.text = "\(testArrayOfFlashcards[spotInArray].text1)?"
         }
     }
     
     @IBAction func answerButtonAction(_ sender: Any) {
-        if testArrayOfFlashcards[spotInArray].type == .definiton {
+        if testArrayOfFlashcards[spotInArray].type == .definition {
             check = testArrayOfFlashcards[spotInArray].text1.lowercased()
             if check.count > 1 {
                 check.removeLast()
@@ -100,8 +100,8 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         answerTextField.text = ""
         spotInArray += 1
         titleLabel.text = testArrayOfFlashcards[spotInArray].title
-        if testArrayOfFlashcards[spotInArray].type == .definiton {
-            questionLabel.text = "What is \(testArrayOfFlashcards[spotInArray].text2) the definiton for?"
+        if testArrayOfFlashcards[spotInArray].type == .definition {
+            questionLabel.text = "What is \(testArrayOfFlashcards[spotInArray].text2) the definition for?"
         } else {
             check = testArrayOfFlashcards[spotInArray].text1
             if check.hasSuffix("?") {
