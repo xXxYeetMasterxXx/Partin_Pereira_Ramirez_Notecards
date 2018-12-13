@@ -5,6 +5,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //table view outlet
     @IBOutlet weak var subjectTableView: UITableView!
     
     override func viewDidLoad() {
@@ -15,6 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     return theSubjectArray.count
     }
     
+    //displays the subjects in the table view cells and the amount of units within the subject in the subtitle
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCells = tableView.dequeueReusableCell(withIdentifier: "SubjectCell", for: indexPath)
         if theSubjectArray[indexPath.row].title == "" {
@@ -25,10 +27,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return ourCells
     }
 
+    //sets the number to reference in the array to the row of the table view the selected subject is in
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         number = indexPath.row
     }
     
+    //deletes the subject, all units and flashcards within and corresponding tests
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         var counter = 0
         while theSubjectArray[indexPath.row].units.count > counter {
@@ -48,6 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         saveData()
     }
 
+    //unwinds from the MakeNewSubjectViewController and adds the subject made to the array
     @IBAction func unwind(_ sender: UIStoryboardSegue) {
         if let sender = sender.source as? MakeNewSubjectViewController {
             theSubjectArray.append(sender.madeSubject)
@@ -55,6 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         saveData()
     }
     
+    //reloads table view when view will appear
     override func viewWillAppear(_ animated: Bool) {
         subjectTableView.reloadData()
     }

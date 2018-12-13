@@ -380,7 +380,7 @@
                                             <segue destination="Vcx-HI-HtS" kind="show" id="hSF-O0-iyl"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="182.66666666666666" id="c9Q-Fg-ddr"/>
+                                    <barButtonItem title="          " width="193.66666666666666" id="c9Q-Fg-ddr"/>
                                     <barButtonItem title="Browse" id="goh-Ah-GNv">
                                         <connections>
                                             <segue destination="BCC-jm-2kd" kind="show" id="7hi-sL-jmX"/>
@@ -1005,7 +1005,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccn-9R-mgh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jdk-pQ-2PF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4230.434782608696" y="1010.054347826087"/>
+            <point key="canvasLocation" x="4229" y="1010"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yzr-C1-jYb">
