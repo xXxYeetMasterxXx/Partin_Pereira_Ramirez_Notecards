@@ -3,10 +3,12 @@
 import UIKit
 import UserNotifications
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var studySwitch: UISwitch!
     @IBOutlet weak var remindTextField: UITextField!
+    @IBOutlet weak var repeatsLabel: UILabel!
+    @IBOutlet weak var repeatsSwitch: UISwitch!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var viewTests: UIButton!
     var remindTime = Date()
@@ -17,10 +19,18 @@ class SettingsViewController: UIViewController {
         timePicker.isHidden = true
         if theTestArray.isEmpty {
             viewTests.isHidden = true
+            
         }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+    self.remindTextField.delegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        remindTextField.resignFirstResponder()
+        return true
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if studySwitch.isOn {
             getMinutes()
@@ -32,6 +42,8 @@ class SettingsViewController: UIViewController {
     @IBAction func switchPressed(_ sender: Any) {
         if studySwitch.isOn == true {
             remindTextField.isHidden = false
+            repeatsLabel.isHidden = false
+            repeatsSwitch.isHidden = false
             timePicker.isHidden = false
         } else {
             remindTextField.isHidden = true

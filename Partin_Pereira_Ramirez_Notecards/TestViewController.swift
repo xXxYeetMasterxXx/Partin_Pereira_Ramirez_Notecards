@@ -2,7 +2,7 @@
 
 import UIKit
 
-class TestViewController: UIViewController {
+class TestViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
@@ -25,7 +25,15 @@ class TestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     self.answerTextField.delegate = self
+    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        answerTextField.resignFirstResponder()
+        return true
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         nextButton.isHidden = true
