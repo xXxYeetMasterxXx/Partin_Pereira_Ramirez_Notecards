@@ -2,18 +2,23 @@
 import UIKit
 import Foundation
 
+//makes global variables to store tests and subjects
 var theSubjectArray: [Subject] = []
 var theTestArray: [Test] = []
+
+//makes numbers to store which element in an array it is on
 var number: Int = 0
 var number2: Int = 0
 var number3: Int = 0
 var number4: Int = 0
 
+//structure that defines a subject and its title and units
 struct Subject: Codable {
     var title: String
     var units: [Unit]
 }
 
+//class that defines a unit as well as its title, flashcards, and personal best
 class Unit: Equatable, Codable {
     var title: String
     var flashcards: [Flashcard]
@@ -28,6 +33,7 @@ class Unit: Equatable, Codable {
     }
 }
 
+//structure that defines a flashcard as well as its title, both sides of text, color, and type
 struct Flashcard: SetNoteType, Codable {
     var title: String
     var text1: String
@@ -47,6 +53,7 @@ struct Flashcard: SetNoteType, Codable {
     }
 }
 
+//structure that defines a test
 struct Test: Codable, Comparable {
     static func < (lhs: Test, rhs: Test) -> Bool {
         return lhs.percent < rhs.percent
@@ -77,12 +84,14 @@ struct Test: Codable, Comparable {
     }
 }
 
+//declares what type of flashcard it is
 enum NoteType: Int, Codable {
     case definition
     case question
     case note
 }
 
+//determines the color of the flashcard
 enum Colour: Int, Codable {
     case yellow
     case orange
@@ -92,11 +101,13 @@ enum Colour: Int, Codable {
     case green
 }
 
+//gets the note type
 protocol SetNoteType {
     var type: NoteType {get set}
     mutating func beAType (notePicked: String) -> NoteType
 }
 
+//gives the flashcards colors according to their color enum
 func colourPicker(colour: Colour) -> UIColor {
     switch colour {
     case .yellow:
@@ -114,10 +125,12 @@ func colourPicker(colour: Colour) -> UIColor {
     }
 }
 
+//makes identifiers to save data with
 let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 let archiveURL = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist")
 let archiveURL2 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist2")
 
+//saves data using the property list encoder
 func saveData() {
     let pListEncoder = PropertyListEncoder()
     let encodedItem = try? pListEncoder.encode(theSubjectArray)
@@ -127,6 +140,7 @@ func saveData() {
     try? newEncodedItem?.write(to: archiveURL2, options: .noFileProtection)
 }
 
+//loads data using the property list encoder
 func loadData() {
     let pListDecoder = PropertyListDecoder()
     if let retrivedItemsData = try? Data(contentsOf: archiveURL), let decodedNotes = try?

@@ -4,23 +4,26 @@ import UIKit
 
 class MakeNewUnitViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var unitLabel: UITextField!
+    //makes an outlet for the text field
+    @IBOutlet weak var unitTextField: UITextField!
     
     var unitMade = Unit(title: "Unit", flashcards: [], personalBest: 0)
     
+    //makes a unit with the name put in the text field
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let safeUnit = unitLabel.text {
+        if let safeUnit = unitTextField.text {
             unitMade.title = safeUnit
         }
     }
     
+    //hides the keyboard when the user taps on the screen or presses return
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.unitLabel.delegate = self
+        self.unitTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        unitLabel.resignFirstResponder()
+        unitTextField.resignFirstResponder()
         return true
     }
     

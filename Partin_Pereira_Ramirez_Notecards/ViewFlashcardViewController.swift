@@ -3,22 +3,19 @@
 import UIKit
 
 class ViewFlashcardViewController: UIViewController {
-
+    
+    //outlet for the flashcard being displayed
     @IBOutlet weak var flashcardButton: UIButton!
     
     var flipped = false
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+    //saves data when you unwind from edit
     @IBAction func unwind5(_ sender: UIStoryboardSegue) {
         saveData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
-        //flashcardButton.backgroundColor = theSubjectArray[number].units[number2].flashcards[number3].colour
         flashcardButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
         flashcardButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
         if theSubjectArray[number].units[number2].flashcards[number3].type == .note {
@@ -41,4 +38,5 @@ class ViewFlashcardViewController: UIViewController {
             flipped = false
         }
     }
+    
 }
