@@ -39,6 +39,7 @@ class BrowseViewController: UIViewController {
         if (flashcardsArray.count - 1) >= (counter + 1) {
             counter += 1
             BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
+            //BrowseVContButton.backgroundColor
             browsedFlipped = false
         } else {
             nextButton.isEnabled = false

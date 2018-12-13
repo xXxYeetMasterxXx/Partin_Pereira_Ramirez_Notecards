@@ -19,6 +19,7 @@
 		5490FFFF21B98F4D0007FF3F /* TestTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5490FFFE21B98F4D0007FF3F /* TestTableViewViewController.swift */; };
 		549680EA21AC61AF0054D827 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549680E921AC61AF0054D827 /* SettingsViewController.swift */; };
 		549A741321B6FB86005666C8 /* TestOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549A741221B6FB86005666C8 /* TestOverviewViewController.swift */; };
+		54AD3F0E21C18AC600AA1AF2 /* EditFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD3F0D21C18AC600AA1AF2 /* EditFlashcardViewController.swift */; };
 		54B49AEF21B1A1D900C9B2B2 /* ViewFlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B49AEE21B1A1D900C9B2B2 /* ViewFlashcardViewController.swift */; };
 		54BDBA2521AC723C004C2A0F /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BDBA2421AC723C004C2A0F /* FlashcardViewController.swift */; };
 		54C6B7D621C024AC00B1A209 /* TestOverviewViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6B7D521C024AC00B1A209 /* TestOverviewViewController2.swift */; };
@@ -65,6 +66,7 @@
 		5490FFFE21B98F4D0007FF3F /* TestTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewViewController.swift; sourceTree = "<group>"; };
 		549680E921AC61AF0054D827 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 		549A741221B6FB86005666C8 /* TestOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOverviewViewController.swift; sourceTree = "<group>"; };
+		54AD3F0D21C18AC600AA1AF2 /* EditFlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlashcardViewController.swift; sourceTree = "<group>"; };
 		54B49AEE21B1A1D900C9B2B2 /* ViewFlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlashcardViewController.swift; sourceTree = "<group>"; };
 		54BDBA2421AC723C004C2A0F /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		54C6B7D521C024AC00B1A209 /* TestOverviewViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOverviewViewController2.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				54BDBA2421AC723C004C2A0F /* FlashcardViewController.swift */,
 				5404910121ADBB5F000E4148 /* MakeNewFlashcardViewController.swift */,
 				54B49AEE21B1A1D900C9B2B2 /* ViewFlashcardViewController.swift */,
+				54AD3F0D21C18AC600AA1AF2 /* EditFlashcardViewController.swift */,
 				54DB0D4121B1B6E000EE324F /* TestViewController.swift */,
 				5490FFFE21B98F4D0007FF3F /* TestTableViewViewController.swift */,
 				549A741221B6FB86005666C8 /* TestOverviewViewController.swift */,
@@ -306,6 +309,7 @@
 				54EDC26521B5941200DC720F /* BrowseViewController.swift in Sources */,
 				54F04C8F21A87B450033A3A0 /* MakeNewSubjectViewController.swift in Sources */,
 				54C6B7D621C024AC00B1A209 /* TestOverviewViewController2.swift in Sources */,
+				54AD3F0E21C18AC600AA1AF2 /* EditFlashcardViewController.swift in Sources */,
 				5404910221ADBB5F000E4148 /* MakeNewFlashcardViewController.swift in Sources */,
 				546D7E1021A71B4200C617AC /* AppDelegate.swift in Sources */,
 				54B49AEF21B1A1D900C9B2B2 /* ViewFlashcardViewController.swift in Sources */,
