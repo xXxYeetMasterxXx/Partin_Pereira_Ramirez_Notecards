@@ -10,6 +10,9 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var percentTextField: UITextField!
     @IBOutlet weak var testTableView: UITableView!
     
+    
+    
+    
     var testArrayBackup: [Test] = []
     //var sortedTests: [Test] = []
     var isSearched = false
@@ -36,7 +39,8 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+self.percentTextField.delegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +53,11 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         theTestArray = testArrayBackup
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        percentTextField.resignFirstResponder()
+        return true
     }
     
     @IBAction func greaterThanAction(_ sender: Any) {
