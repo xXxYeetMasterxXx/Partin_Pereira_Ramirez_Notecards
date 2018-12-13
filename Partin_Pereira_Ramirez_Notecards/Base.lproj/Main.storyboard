@@ -1239,7 +1239,7 @@
         <!--Edit Flashcard-->
         <scene sceneID="CdZ-Za-uNo">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="xyj-Q8-x05" customClass="MakeNewFlashcardViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="xyj-Q8-x05" customClass="EditFlashcardViewController" customModule="Partin_Pereira_Ramirez_Notecards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6xs-j4-aXH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1314,6 +1314,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="titleTextField" destination="my8-1c-N9M" id="Fmb-Q2-1dh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEK-Tv-U2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="lBH-Lu-rnX" userLabel="Exit" sceneMemberID="exit"/>
