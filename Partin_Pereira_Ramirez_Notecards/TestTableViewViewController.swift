@@ -14,7 +14,6 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     
     
     var testArrayBackup: [Test] = []
-    //var sortedTests: [Test] = []
     var isSearched = false
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
