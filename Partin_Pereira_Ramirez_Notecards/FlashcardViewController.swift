@@ -23,7 +23,7 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
             ourCells3.detailTextLabel?.text = "Note"
         } else if theSubjectArray[number].units[number2].flashcards[indexPath.row].type == .question {
             ourCells3.detailTextLabel?.text = "Question"
-        } else if theSubjectArray[number].units[number2].flashcards[indexPath.row].type == .definiton  {
+        } else if theSubjectArray[number].units[number2].flashcards[indexPath.row].type == .definition  {
             ourCells3.detailTextLabel?.text = "Definiton"
         }
         return ourCells3

@@ -18,12 +18,6 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var labelTwo: UILabel!
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    
-    
-    
-
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -60,9 +54,6 @@ class MakeNewFlashcardViewController: UIViewController, UIPickerViewDataSource, 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         flashcardMade = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: flashcardColour, type: flashcardMade.beAType(notePicked: pickerArray[numberForPicker]))
     }
-    
-   
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
