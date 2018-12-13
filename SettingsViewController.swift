@@ -7,6 +7,8 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var studySwitch: UISwitch!
     @IBOutlet weak var remindTextField: UITextField!
+    @IBOutlet weak var repeatsLabel: UILabel!
+    @IBOutlet weak var repeatsSwitch: UISwitch!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var viewTests: UIButton!
     var remindTime = Date()
@@ -32,6 +34,8 @@ class SettingsViewController: UIViewController {
     @IBAction func switchPressed(_ sender: Any) {
         if studySwitch.isOn == true {
             remindTextField.isHidden = false
+            repeatsLabel.isHidden = false
+            repeatsSwitch.isHidden = false
             timePicker.isHidden = false
         } else {
             remindTextField.isHidden = true
