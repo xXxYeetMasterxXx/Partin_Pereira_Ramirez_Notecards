@@ -38,11 +38,10 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
         testTableView.reloadData()
     }
     
-    //makes the keyboard disapear when the user presses outside or return
+    //makes the keyboard disapear when the user presses return
     override func viewDidLoad() {
         super.viewDidLoad()
         self.percentTextField.delegate = self
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     //reloads the table view and resets the variables
