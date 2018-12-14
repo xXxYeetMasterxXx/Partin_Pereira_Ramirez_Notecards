@@ -53,14 +53,9 @@ class FlashcardViewController: UIViewController, UITableViewDataSource, UITableV
         saveData()
     }
     
-    //enables when the view loads
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        enabled()
-    }
-    
     //reloads data
     override func viewWillAppear(_ animated: Bool) {
+        enabled()
         flashcardsTableView.reloadData()
     }
     

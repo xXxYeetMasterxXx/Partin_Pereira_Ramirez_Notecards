@@ -4,8 +4,10 @@ import UIKit
 
 class EditFlashcardViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
+    //stores the color of the flashcard being made
     var flashcardColour: Colour = theSubjectArray[number].units[number2].flashcards[number3].colour
     
+    //outlets for all of the input items
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var text1TextView: UITextView!
     @IBOutlet weak var text2TextView: UITextView!
@@ -13,6 +15,7 @@ class EditFlashcardViewController: UIViewController, UITextFieldDelegate, UIText
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var labelTwo: UILabel!
     
+    //makes the keyobard disapear with return and clicking outside as well as makes the view scroll down when the keyboard is pulled up to keep visibility
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -20,38 +23,31 @@ class EditFlashcardViewController: UIViewController, UITextFieldDelegate, UIText
             }
         }
     }
-    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         titleTextField.resignFirstResponder()
         return true
     }
-    
     func textViewShouldReturn(_ textView: UITextView) -> Bool {
         text1TextView.resignFirstResponder()
         return true
     }
-    
     func textViewShouldReturn2(_ textView: UITextView) -> Bool {
         text2TextView.resignFirstResponder()
         return true
     }
     
+    //stores the type of flashcard in a variable then uses it to assign the flashcard all of the new values
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if theSubjectArray[number].units[number2].flashcards[number3].type == .note {
-            theSubjectArray[number].units[number2].flashcards[number3] = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: flashcardColour, type: .note)
-        } else if theSubjectArray[number].units[number2].flashcards[number3].type == .question {
-            theSubjectArray[number].units[number2].flashcards[number3] = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: flashcardColour, type: .question)
-        } else {
-            theSubjectArray[number].units[number2].flashcards[number3] = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: flashcardColour, type: .definition)
-        }
+        let flashcardType = theSubjectArray[number].units[number2].flashcards[number3].type
+        theSubjectArray[number].units[number2].flashcards[number3] = Flashcard(title: titleTextField.text!, text1: text1TextView.text!, text2: text2TextView.text!, colour: flashcardColour, type: flashcardType)
     }
     
+    //allows for keyboard hiding
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleTextField.delegate = self
@@ -60,6 +56,7 @@ class EditFlashcardViewController: UIViewController, UITextFieldDelegate, UIText
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    //updates all of the UI elements in the view to what the flashcard currenlty has
     override func viewWillAppear(_ animated: Bool) {
         titleTextField.text = theSubjectArray[number].units[number2].flashcards[number3].title
         text1TextView.text = theSubjectArray[number].units[number2].flashcards[number3].text1
@@ -90,6 +87,7 @@ class EditFlashcardViewController: UIViewController, UITextFieldDelegate, UIText
         }
     }
     
+    //assigns the flashcard a color when the color button is pressed
     @IBAction func colourButtonPressed(_ sender: Any) {
         if colourButton.backgroundColor == #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1) {
             colourButton.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)

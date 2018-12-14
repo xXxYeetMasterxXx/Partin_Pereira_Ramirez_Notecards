@@ -14,9 +14,6 @@ class BrowseViewController: UIViewController {
     var counter2: Int = 0
     var flashcardsArray: [Flashcard] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     //loads a flashcard, upon going on the view controller
     override func viewWillAppear(_ animated: Bool) {
         counter = 0
