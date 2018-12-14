@@ -3,7 +3,8 @@
 import UIKit
 
 class TestOverviewViewController2: UIViewController {
-
+    
+    //outlets for all of the labels and the sticker
     @IBOutlet weak var unitTitleLabel: UILabel!
     @IBOutlet weak var amountOfItemsLabel: UILabel!
     @IBOutlet weak var amountOfCorrectLabel: UILabel!
@@ -16,11 +17,7 @@ class TestOverviewViewController2: UIViewController {
     @IBOutlet weak var stickerImage: UIImageView!
     var stickers: [UIImage] = [#imageLiteral(resourceName: "try again"), #imageLiteral(resourceName: "nice work"), #imageLiteral(resourceName: "very nice"), #imageLiteral(resourceName: "great job"), #imageLiteral(resourceName: "meWOW")]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
+    //displays information about the test and displays a sticker according to the score
     override func viewWillAppear(_ animated: Bool) {
         let testToDisplay = theTestArray[number4]
         unitTitleLabel.text = testToDisplay.title

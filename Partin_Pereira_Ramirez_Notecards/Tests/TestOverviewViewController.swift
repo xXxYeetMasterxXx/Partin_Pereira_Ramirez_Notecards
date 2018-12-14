@@ -4,7 +4,7 @@ import UIKit
 
 class TestOverviewViewController: UIViewController {
     
-    //outlets for all of the labels and the sticler
+    //outlets for all of the labels and the sticker
     @IBOutlet weak var unitTitleLabel: UILabel!
     @IBOutlet weak var amountOfItemsLabel: UILabel!
     @IBOutlet weak var amountCorrectLabel: UILabel!
