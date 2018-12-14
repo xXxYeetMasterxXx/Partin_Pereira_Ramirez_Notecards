@@ -8,10 +8,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //table view outlet
     @IBOutlet weak var subjectTableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return theSubjectArray.count
     }
