@@ -44,18 +44,21 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         testArrayOfFlashcards.shuffle()
         titleLabel.text = testArrayOfFlashcards[spotInArray].title
         if testArrayOfFlashcards[spotInArray].type == .definition {
-            questionLabel.text = "What is \(testArrayOfFlashcards[spotInArray].text2) the definition for?"
+            questionLabel.text = "What is \"\(testArrayOfFlashcards[spotInArray].text2)\" the definition for?"
+        } else if testArrayOfFlashcards[spotInArray].text1.hasSuffix("?") {
+            questionLabel.text = testArrayOfFlashcards[spotInArray].text1
         } else {
             questionLabel.text = "\(testArrayOfFlashcards[spotInArray].text1)?"
         }
     }
     
     @IBAction func answerButtonAction(_ sender: Any) {
+        check = testArrayOfFlashcards[spotInArray].text2.lowercased()
+        answerTextField.isEnabled = false
+        if check.count > 1 && (check.hasSuffix("?") || check.hasSuffix(".") || check.hasSuffix("!")) {
+            check.removeLast()
+        }
         if testArrayOfFlashcards[spotInArray].type == .definition {
-            check = testArrayOfFlashcards[spotInArray].text1.lowercased()
-            if check.count > 1 {
-                check.removeLast()
-            }
             if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text1.lowercased() || answerTextField.text?.lowercased() == check {
                 correct += 1
                 outcomeLabel.text = "Correct"
@@ -67,10 +70,6 @@ class TestViewController: UIViewController, UITextFieldDelegate {
                 outcomeLabel.isHidden = false
             }
         } else {
-            check = testArrayOfFlashcards[spotInArray].text2.lowercased()
-            if check.count > 1 {
-                check.removeLast()
-            }
             if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text2.lowercased() || answerTextField.text?.lowercased() == check {
                 correct += 1
                 outcomeLabel.text = "Correct"
@@ -86,7 +85,6 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         if spotInArray == testArrayOfFlashcards.count - 1 {
             answerButton.isHidden = true
             doneButton.isHidden = false
-            answerTextField.isEnabled = false
         } else {
             answerButton.isEnabled = false
             nextButton.isHidden = false
@@ -97,11 +95,12 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         answerButton.isEnabled = true
         nextButton.isHidden = true
         outcomeLabel.isHidden = true
+        answerTextField.isEnabled = true
         answerTextField.text = ""
         spotInArray += 1
         titleLabel.text = testArrayOfFlashcards[spotInArray].title
         if testArrayOfFlashcards[spotInArray].type == .definition {
-            questionLabel.text = "What is \(testArrayOfFlashcards[spotInArray].text2) the definition for?"
+            questionLabel.text = "What is \"\(testArrayOfFlashcards[spotInArray].text2)\" the definition for?"
         } else {
             check = testArrayOfFlashcards[spotInArray].text1
             if check.hasSuffix("?") {
