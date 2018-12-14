@@ -22,10 +22,10 @@ class BrowseViewController: UIViewController {
         counter = 0
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
         flashcardsArray = theSubjectArray[number].units[number2].flashcards
-        BrowseVContButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
         flashcardsArray.shuffle()
-        BrowseVContButton.setTitle(flashcardsArray[number3].text1, for: .normal)
-        if flashcardsArray[number3].type == .note {
+        BrowseVContButton.backgroundColor = colourPicker(colour: flashcardsArray[counter].colour)
+        BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
+        if flashcardsArray[counter].type == .note {
             BrowseVContButton.isEnabled = false
         }
         if flashcardsArray.count == 1 {
@@ -40,17 +40,17 @@ class BrowseViewController: UIViewController {
     
     //take the next flashcard and displays it when next is pressed
     @IBAction func nextButton(_ sender: Any) {
+        browsedFlipped = false
         if (flashcardsArray.count - 1) >= (counter + 1) {
             counter += 1
             BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
-            BrowseVContButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[counter].colour)
-            browsedFlipped = false
-        } else {
+            BrowseVContButton.backgroundColor = colourPicker(colour: flashcardsArray[counter].colour)
+        }
+        if (flashcardsArray.count - 1) == (counter + 1) {
             nextButton.isEnabled = false
         }
         if flashcardsArray[counter].type == .note {
             BrowseVContButton.isEnabled = false
-            browsedFlipped = false
         } else {
             BrowseVContButton.isEnabled = true
         }
