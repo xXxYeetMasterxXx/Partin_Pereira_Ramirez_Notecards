@@ -52,6 +52,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //when the answer button is selected it determines whether the answer is correct or wrong, and if it is the last question in the test
     @IBAction func answerButtonAction(_ sender: Any) {
         check = testArrayOfFlashcards[spotInArray].text2.lowercased()
         answerTextField.isEnabled = false
