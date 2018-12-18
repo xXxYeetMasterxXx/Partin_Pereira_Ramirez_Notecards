@@ -27,6 +27,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         ourTest.testToDisplay = thisTest
     }
     
+    //hides the keyobard when the user presses return or outside the screen
     override func viewDidLoad() {
         super.viewDidLoad()
         self.answerTextField.delegate = self
@@ -38,7 +39,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
-    
+    //hides the appropriate buttons, resets the test array, finds the quesions/definitions, and shuffles the array when the view appears
     override func viewWillAppear(_ animated: Bool) {
         nextButton.isHidden = true
         doneButton.isHidden = true
@@ -46,6 +47,8 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         testArrayOfFlashcards = []
         recursion(theSubjectArray[number].units[number2].flashcards.count - 1)
         testArrayOfFlashcards.shuffle()
+        
+        //adds the title of the flashcard, then shows the question/definition with the appropriate wording
         titleLabel.text = testArrayOfFlashcards[spotInArray].title
         if testArrayOfFlashcards[spotInArray].type == .definition {
             questionLabel.text = "What is \"\(testArrayOfFlashcards[spotInArray].text2)\" the definition for?"
