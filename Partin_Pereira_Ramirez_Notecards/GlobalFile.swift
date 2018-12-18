@@ -12,6 +12,9 @@ var number2: Int = 0
 var number3: Int = 0
 var number4: Int = 0
 
+//global variable to store if the reminder switch is on
+var remindIsOn = false
+
 //structure that defines a subject and its title and units
 struct Subject: Codable {
     var title: String
