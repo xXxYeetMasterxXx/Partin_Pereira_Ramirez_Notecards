@@ -9,7 +9,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var subjectTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return theSubjectArray.count
+        return theSubjectArray.count
     }
     
     //displays the subjects in the table view cells and the amount of units within the subject in the subtitle

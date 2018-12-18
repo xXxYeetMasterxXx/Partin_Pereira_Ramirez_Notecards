@@ -17,6 +17,7 @@ class ViewFlashcardViewController: UIViewController {
     //displays the chosen flashcard and makes it landscape
     override func viewWillAppear(_ animated: Bool) {
         UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+        flipped = false
         flashcardButton.backgroundColor = colourPicker(colour: theSubjectArray[number].units[number2].flashcards[number3].colour)
         flashcardButton.setTitle(theSubjectArray[number].units[number2].flashcards[number3].text1, for: .normal)
         if theSubjectArray[number].units[number2].flashcards[number3].type == .note {
