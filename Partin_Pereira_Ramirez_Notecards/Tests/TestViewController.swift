@@ -4,6 +4,7 @@ import UIKit
 
 class TestViewController: UIViewController, UITextFieldDelegate {
     
+    //outlets for all of the labels and buttons of the test
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
@@ -11,6 +12,8 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var outcomeLabel: UILabel!
+    
+    //variables for the array of flashcards as well as the number correct, number of questions, position in the flashcard array, and a string for testing punctuation
     var testArrayOfFlashcards: [Flashcard] = []
     var thisTest = Test(title: "", amount: 0, correct: 0, percent: 0, amoundOfQuestions: 0, testedUnit: theSubjectArray[number].units[number2])
     var correct = 0
@@ -18,6 +21,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     var spotInArray = 0
     var check = ""
     
+    //displays the results of the test in TestOverviewViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ourTest = segue.destination as! TestOverviewViewController
         ourTest.testToDisplay = thisTest
@@ -25,8 +29,8 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     self.answerTextField.delegate = self
-    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        self.answerTextField.delegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
