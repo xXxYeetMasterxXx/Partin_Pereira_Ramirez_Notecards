@@ -43,7 +43,7 @@ class BrowseViewController: UIViewController {
             BrowseVContButton.setTitle(flashcardsArray[counter].text1, for: .normal)
             BrowseVContButton.backgroundColor = colourPicker(colour: flashcardsArray[counter].colour)
         }
-        if (flashcardsArray.count - 1) == (counter + 1) {
+        if (flashcardsArray.count - 1) == (counter) {
             nextButton.isEnabled = false
         }
         if flashcardsArray[counter].type == .note {
