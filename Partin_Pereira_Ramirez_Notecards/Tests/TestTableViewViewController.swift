@@ -121,13 +121,14 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
     
     //disables the appropriate buttons then perfroms a searching algotirhtm to find and display the values within the user's criteria, otherwise returns to the normal display and enables the buttons
     func compare(button: UIButton, button2: UIButton, button3: UIButton, type: Int) {
-        
         if isSearched == false {
             button.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             button2.isEnabled = false
             button3.isEnabled = false
             isSearched = true
-            
+            if percentTextField.text!.hasSuffix("%") {
+                percentTextField.text?.removeLast()
+            }
             guard let safePercent = Double(percentTextField.text!) else {return}
             searching(searchValue: safePercent, array: makePercentArray(testArray: theTestArray), type: type)
         } else {
@@ -139,5 +140,4 @@ class TestTableViewViewController: UIViewController, UITableViewDataSource, UITa
             isSearched = false
         }
     }
-    
 }

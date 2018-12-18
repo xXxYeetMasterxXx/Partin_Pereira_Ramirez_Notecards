@@ -134,11 +134,11 @@
 		5432430821C2DD0E00A8E901 /* Flashcard */ = {
 			isa = PBXGroup;
 			children = (
-				54AD3F0D21C18AC600AA1AF2 /* EditFlashcardViewController.swift */,
-				54B49AEE21B1A1D900C9B2B2 /* ViewFlashcardViewController.swift */,
-				54EDC26421B5941200DC720F /* BrowseViewController.swift */,
 				54BDBA2421AC723C004C2A0F /* FlashcardViewController.swift */,
 				5404910121ADBB5F000E4148 /* MakeNewFlashcardViewController.swift */,
+				54B49AEE21B1A1D900C9B2B2 /* ViewFlashcardViewController.swift */,
+				54AD3F0D21C18AC600AA1AF2 /* EditFlashcardViewController.swift */,
+				54EDC26421B5941200DC720F /* BrowseViewController.swift */,
 			);
 			path = Flashcard;
 			sourceTree = "<group>";

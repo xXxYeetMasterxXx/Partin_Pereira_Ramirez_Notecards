@@ -60,7 +60,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
             check.removeLast()
         }
         if testArrayOfFlashcards[spotInArray].type == .definition {
-            if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text1.lowercased() || answerTextField.text?.lowercased() == check {
+            if answerTextField.text?.lowercased() == testArrayOfFlashcards[spotInArray].text1.lowercased() {
                 correct += 1
                 outcomeLabel.text = "Correct"
                 outcomeLabel.textColor = #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)
