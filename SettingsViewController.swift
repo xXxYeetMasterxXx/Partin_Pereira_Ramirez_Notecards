@@ -14,20 +14,29 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var viewTests: UIButton!
     var remindTime = Date()
     
-    //hides everything when the view loads and then lets reminders occur
+    
+    //hides the keyboard when the user taps outside the screen
     override func viewDidLoad() {
         super.viewDidLoad()
-        remindTextField.isHidden = true
-        repeatsLabel.isHidden = true
-        repeatsSwitch.isHidden = true
-        timePicker.isHidden = true
-        
-        if theTestArray.isEmpty {
-            viewTests.isHidden = true
-        }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
         self.remindTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    }
+    
+    //assigns the remind switch to its global value, then hides the reminder elements if it is false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        studySwitch.isOn = remindIsOn
+        if studySwitch.isOn == false {
+            remindTextField.isHidden = true
+            repeatsLabel.isHidden = true
+            repeatsSwitch.isHidden = true
+            timePicker.isHidden = true
+        }
+        if theTestArray.isEmpty {
+            viewTests.isHidden = true
+        }
     }
     
     //hides keyobard when user clicks return
@@ -62,6 +71,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     //gets the number of minutes from the date picker
     func getMinutes() {
+        remindIsOn = true
         remindTime = timePicker.date
         let repeats = repeatsSwitch.isOn
         let components = Calendar.current.dateComponents([.hour, .minute], from: remindTime)
@@ -84,6 +94,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     //cancels all notifcations if the reminder switch is off
     func cancel() {
+        remindIsOn = false
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
