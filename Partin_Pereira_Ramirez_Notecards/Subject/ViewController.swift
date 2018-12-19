@@ -8,12 +8,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //table view outlet
     @IBOutlet weak var subjectTableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return theSubjectArray.count
+        return theSubjectArray.count
     }
     
     //displays the subjects in the table view cells and the amount of units within the subject in the subtitle

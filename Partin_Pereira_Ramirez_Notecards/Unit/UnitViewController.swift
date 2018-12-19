@@ -51,10 +51,6 @@ class UnitViewController: UIViewController, UITableViewDataSource, UITableViewDe
         saveData()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     //reloads table view when view will appear
     override func viewWillAppear(_ animated: Bool) {
         unitItem.title = theSubjectArray[number].title
